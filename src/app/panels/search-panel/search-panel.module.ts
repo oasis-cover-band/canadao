@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RightSidePanelComponent } from './right-side-panel.component';
+import { SearchPanelComponent } from './search-panel.component';
 
 
 
 @NgModule({
   declarations: [
-    RightSidePanelComponent
+    SearchPanelComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    RightSidePanelComponent
+    SearchPanelComponent
   ]
 })
-export class RightSidePanelModule { }
+export class SearchPanelModule { }

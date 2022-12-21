@@ -1,3 +1,17 @@
+
+
+:root {
+    --gray-0:#090A0B; 
+    --gray-1:#141518;
+
+    --red:#FFA69E;
+    --blue:#93E1D8;
+    --light-blue:#DDFFF7;
+    --white: #EEE5E9;
+
+    --border-radius:10px;
+}
+
 html, body {
     display:grid;
     grid-template-areas:
@@ -12,4 +26,70 @@ html, body {
     width:100vw;
     height:100vh;
     overflow:hidden;
+    margin:0px;
+    padding:0px;
+}
+
+html {
+    font-size:20px;
+    background:var(--gray-1);
+
+    
+    scrollbar-width: thin;          /* "auto" or "thin" */
+    scrollbar-color: var(--gray-0) rgba(0,0,0,0);   /* scroll thumb and track */
+    ::-webkit-scrollbar {
+        border-color: var(--gray-1);
+        border-radius: var(--border-radius);       /* roundness of the scroll thumb */
+      width: 0px;               /* width of the entire scrollbar */
+      height: 0px;               /* width of the entire scrollbar */
+    }
+    
+    ::-webkit-scrollbar-track {
+        border-color:rgba(0, 0, 0, 0.0);
+        border-radius: var(--border-radius);       /* roundness of the scroll thumb */
+      background: rgba(0,0,0,0);        /* color of the tracking area */
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--gray-1); /* Old browsers */
+      border-radius: var(--border-radius);       /* roundness of the scroll thumb */
+      border: 0px solid rgba(0, 0, 0, 0.0);  /* creates padding around scroll thumb */
+    }
+
+    ::-webkit-scrollbar-corner {
+        background: rgba(0,0,0,0.0);
+        border-radius:var(--border-radius);
+    }
+    
+    ::selection {
+        color: var(--gray-0);
+        background: var(--blue);
+    }
+
+    * {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+        scrollbar-color: var(--gray-1) rgba(0,0,0,0);   /* scroll thumb and track */
+        ::-webkit-scrollbar-thumb {
+            background: var(--gray-1); /* Old browsers */
+          border-radius: var(--border-radius);       /* roundness of the scroll thumb */
+          border: 0px solid rgba(0, 0, 0, 0.0);  /* creates padding around scroll thumb */
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
+
+html, h1, h2, h3, h4, h5, h6, span, p, input, button {
+    color:var(--white);
+}
+
+input, button, textarea, ul {
+    margin:unset;
+    padding:unset;
+    border:unset;
+    background:unset;
+    outline:unset;
+    font-size:1.25rem;
 }

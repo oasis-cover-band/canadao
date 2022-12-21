@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RightSidePanelComponent } from './right-side-panel.component';
+import { SearchPanelComponent } from './search-panel.component';
 
-describe('RightSidePanelComponent', () => {
-  let component: RightSidePanelComponent;
-  let fixture: ComponentFixture<RightSidePanelComponent>;
+describe('SearchPanelComponent', () => {
+  let component: SearchPanelComponent;
+  let fixture: ComponentFixture<SearchPanelComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RightSidePanelComponent ]
+      declarations: [ SearchPanelComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RightSidePanelComponent);
+    fixture = TestBed.createComponent(SearchPanelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

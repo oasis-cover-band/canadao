@@ -1,0 +1,37 @@
+:host {
+    grid-area:content;
+    background:var(--gray-0);
+    display:grid;
+    grid-template-areas: 'list';
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    ul {
+        grid-area:list;
+        display:grid;
+        grid-auto-rows: max-content;
+        grid-auto-flow: row;
+        row-gap:10px;
+        column-gap:10px;
+        list-style-type: none;
+        @media (max-width:1000px) {
+            grid-auto-flow: column;
+            grid-auto-columns: max-content;
+        }
+        li {
+            display:grid;
+            grid-template-areas:
+            '. . . .'
+            '. icon list-item .'
+            '. . . .';
+            grid-template-columns: 5px max-content 1fr 5px;
+            grid-template-rows: 5px 1fr 5px;
+            column-gap:10px;
+            &.active {
+                background:var(--gray-1);
+            }
+            h6 {
+                grid-area:list-item;
+            }
+        }
+    }
+}

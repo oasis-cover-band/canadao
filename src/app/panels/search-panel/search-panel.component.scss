@@ -1,0 +1,14 @@
+:host {
+    grid-area: content;
+    background:var(--gray-0);
+    display:grid;
+    grid-template-areas:
+    '. . . .'
+    '. icon input .'
+    '. . . .';
+    grid-template-columns: 20px max-content 1fr 20px;
+    grid-template-rows: 20px 1fr 20px;
+    input {
+        grid-area:input;
+    }
+}

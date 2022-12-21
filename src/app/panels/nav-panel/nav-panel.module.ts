@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LeftSidePanelComponent } from './left-side-panel.component';
+import { NavPanelComponent } from './nav-panel.component';
 
 
 
 @NgModule({
   declarations: [
-    LeftSidePanelComponent
+    NavPanelComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    LeftSidePanelComponent
+    NavPanelComponent
   ]
 })
-export class LeftSidePanelModule { }
+export class NavPanelModule { }
