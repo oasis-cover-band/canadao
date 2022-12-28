@@ -1,11 +1,16 @@
-<form [@navRouterAnimations]="search.isActivated ? search.activatedRoute : ''">
-  <router-outlet #search="outlet" id="search" name="search"></router-outlet>
+<form class="top" [@navRouterAnimations]="top.isActivated ? top.activatedRoute : ''">
+  <router-outlet #top="outlet" id="top" name="top"></router-outlet>
 </form>
 
-<nav class="nav" [@navRouterAnimations]="nav.isActivated ? nav.activatedRoute : ''">
+<nav class="menu" [@navRouterAnimations]="nav.isActivated ? nav.activatedRoute : ''">
   <router-outlet #nav="outlet" id="nav" name="nav"></router-outlet>
 </nav>
 
-<main [@mainRouterAnimations]="main.isActivated ? main.activatedRoute : ''">
+<main class="content" [@mainRouterAnimations]="main.isActivated ? main.activatedRoute : ''">
   <router-outlet #main="outlet" id="main" name="main"></router-outlet>
 </main>
+
+
+<aside class="relatables" [@asideRouterAnimations]="aside.isActivated ? aside.activatedRoute : ''">
+  <router-outlet #aside="outlet" id="aside" name="aside"></router-outlet>
+</aside>

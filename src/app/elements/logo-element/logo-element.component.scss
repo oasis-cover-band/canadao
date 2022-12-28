@@ -1,0 +1,14 @@
+:host {
+    display:grid;
+    grid-template-areas:
+    'logo';
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    align-items: stretch;
+    align-content: stretch;
+    justify-items: stretch;
+    justify-content: stretch;
+    app-section-element {
+        grid-area:logo;
+    }
+}

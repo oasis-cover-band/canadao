@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SearchPanelComponent } from './search-panel.component';
+import { SectionElementComponent } from './section-element.component';
 
 
 
 @NgModule({
   declarations: [
-    SearchPanelComponent
+    SectionElementComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    SearchPanelComponent
+    SectionElementComponent
   ]
 })
-export class SearchPanelModule { }
+export class SectionElementModule { }

@@ -1,0 +1,21 @@
+:host {
+    grid-area: content;
+    background:var(--gray-0);
+    display:grid;
+    grid-template-areas:
+    '. . . . . .'
+    '. icon logo search buttons .'
+    '. . . . . .';
+    grid-template-columns: 20px max-content max-content 1fr max-content 20px;
+    grid-template-rows: 20px 1fr 20px;
+    min-width:100vw;
+    max-width:100vw;
+    width:100vw;
+    column-gap:20px;
+    app-search-element {
+        grid-area:search;
+    }
+    app-logo-element {
+        grid-area:logo;
+    }
+}

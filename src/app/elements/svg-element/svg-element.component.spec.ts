@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SearchPanelComponent } from './search-panel.component';
+import { SvgElementComponent } from './svg-element.component';
 
-describe('SearchPanelComponent', () => {
-  let component: SearchPanelComponent;
-  let fixture: ComponentFixture<SearchPanelComponent>;
+describe('SvgElementComponent', () => {
+  let component: SvgElementComponent;
+  let fixture: ComponentFixture<SvgElementComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SearchPanelComponent ]
+      declarations: [ SvgElementComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SearchPanelComponent);
+    fixture = TestBed.createComponent(SvgElementComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

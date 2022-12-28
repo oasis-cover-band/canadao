@@ -10,6 +10,9 @@ import { DiscussionElementComponent } from './discussion-element.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    DiscussionElementComponent
   ]
 })
 export class DiscussionElementModule { }

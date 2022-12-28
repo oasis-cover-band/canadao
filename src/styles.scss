@@ -1,8 +1,9 @@
-
+@import './assets/fonts/stylesheet.css';
 
 :root {
     --gray-0:#090A0B; 
     --gray-1:#141518;
+    --gray-2:#212227;
 
     --red:#FFA69E;
     --blue:#93E1D8;
@@ -10,6 +11,8 @@
     --white: #EEE5E9;
 
     --border-radius:10px;
+
+    --transition: 0.25s ease-in;
 }
 
 html, body {
@@ -31,7 +34,8 @@ html, body {
 }
 
 html {
-    font-size:20px;
+    font-family: 'Plus Jakarta Sans';
+    font-size:16px;
     background:var(--gray-1);
 
     
@@ -81,15 +85,55 @@ html {
     }
 }
 
-html, h1, h2, h3, h4, h5, h6, span, p, input, button {
-    color:var(--white);
-}
-
-input, button, textarea, ul {
+input, button, textarea, ul, h1, h2, h3, h4, h5, h6, span, p, input, button, span {
+    font-family: 'Plus Jakarta Sans';
     margin:unset;
     padding:unset;
     border:unset;
     background:unset;
     outline:unset;
-    font-size:1.25rem;
+    color:var(--white);
+    font-size:1rem;
+}
+
+
+h1 {
+    font-size:3rem;
+    font-weight:700;
+    line-height: 3rem;
+}
+
+h2 {
+    font-size:3rem;
+    font-weight:700;
+}
+
+h3 {
+    font-size:1.5rem;
+    font-weight:700;
+    letter-spacing: 0.3rem;
+    font-variant-caps: small-caps;
+    background: linear-gradient(92.5deg,var(--blue) 6.25%,var(--light-blue) 106.66%);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+h4 {
+    font-size:1rem;
+    color: var(--white);
+    font-weight: 500;
+}
+
+h5 {
+  font-size:1.3rem;
+  color: var(--white);
+  font-weight: 900;
+}
+
+h6 {
+  font-weight:300;
+  font-size:0.85rem;
 }

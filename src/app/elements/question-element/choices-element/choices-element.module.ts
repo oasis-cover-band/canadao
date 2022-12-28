@@ -10,6 +10,9 @@ import { ChoicesElementComponent } from './choices-element.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    ChoicesElementComponent
   ]
 })
 export class ChoicesElementModule { }

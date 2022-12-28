@@ -10,6 +10,9 @@ import { QuestionElementComponent } from './question-element.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    QuestionElementComponent
   ]
 })
 export class QuestionElementModule { }

@@ -10,6 +10,9 @@ import { QuestionHeaderElementComponent } from './question-header-element.compon
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    QuestionHeaderElementComponent
   ]
 })
 export class QuestionHeaderElementModule { }

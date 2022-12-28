@@ -10,6 +10,9 @@ import { QuestionMenuElementComponent } from './question-menu-element.component'
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    QuestionMenuElementComponent
   ]
 })
 export class QuestionMenuElementModule { }
