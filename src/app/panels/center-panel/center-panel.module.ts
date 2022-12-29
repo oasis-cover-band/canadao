@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CenterPanelComponent } from './center-panel.component';
+import { HomePageModule } from 'src/app/pages/home-page/home-page.module';
 
 
 
@@ -9,7 +10,8 @@ import { CenterPanelComponent } from './center-panel.component';
     CenterPanelComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    HomePageModule
   ],
   exports: [
     CenterPanelComponent

@@ -1,6 +1,7 @@
 :host {
-    grid-area:content;
     background:var(--gray-0);
+    border-radius: var(--border-radius);
+    grid-area:content;
     display:grid;
     grid-template-areas:
     '.'
@@ -9,9 +10,7 @@
     '.';
     grid-template-columns: 1fr;
     grid-template-rows: 20px max-content max-content 20px;
-    column-gap:10px;
     row-gap:10px;
-    border-radius: var(--border-radius);
     height:fit-content;
     max-height:fit-content;
     min-height:fit-content;
@@ -46,7 +45,7 @@
             '. icon list-item .'
             '. . . .';
             grid-template-columns: 10px max-content 1fr 10px;
-            grid-template-rows: 20px 1fr 20px;
+            grid-template-rows: 10px 1fr 10px;
             column-gap:10px;
             cursor: pointer;
             &.active {

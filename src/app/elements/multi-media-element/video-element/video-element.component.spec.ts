@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChoicesElementComponent } from './choices-element.component';
+import { VideoElementComponent } from './video-element.component';
 
-describe('ChoicesElementComponent', () => {
-  let component: ChoicesElementComponent;
-  let fixture: ComponentFixture<ChoicesElementComponent>;
+describe('VideoElementComponent', () => {
+  let component: VideoElementComponent;
+  let fixture: ComponentFixture<VideoElementComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ChoicesElementComponent ]
+      declarations: [ VideoElementComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ChoicesElementComponent);
+    fixture = TestBed.createComponent(VideoElementComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

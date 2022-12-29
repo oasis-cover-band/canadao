@@ -1,0 +1,10 @@
+<app-question-category-item-element *ngFor="let category of this.categories; let index = index; trackBy: categoryTrackBy"
+[category]="category"
+[ngClass]="{
+    'blue': this.category === 'politics',
+    'orange': this.category === 'crime',
+    'green': this.category === 'international',
+    'red': this.category === 'canada',
+    'pink': this.category === 'provincial',
+    'purple': this.category === 'local'
+}"></app-question-category-item-element>

@@ -1,0 +1,4 @@
+<app-section-element class="grid">
+    <app-question-element *ngFor="let question of (this.questions | async)!; let index = index; trackBy: questionTrackBy"
+    [question]="question"></app-question-element>
+</app-section-element>

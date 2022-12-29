@@ -1,4 +1,7 @@
 :host {
+    background:var(--gray-1);
+    border-radius:var(--border-radius);
+    transition:var(--transition);
     display:grid;
     grid-template-areas:
     '. . . .'
@@ -6,9 +9,10 @@
     '. . . .';
     grid-template-columns: 20px max-content 1fr 20px;
     grid-template-rows: 10px 1fr 10px;
-    background:var(--gray-1);
-    border-radius:var(--border-radius);
     input {
         grid-area:input;
+    }
+    &:hover {
+        background:var(--gray-2);
     }
 }

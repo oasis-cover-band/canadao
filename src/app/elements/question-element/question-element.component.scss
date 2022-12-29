@@ -1,0 +1,42 @@
+:host {
+    transition:var(--transition);
+    background:var(--gray-0);
+    border-radius: var(--border-radius);
+    border:2px solid transparent;
+    max-width:calc(100% - 4px);
+    min-width:calc(100% - 4px);
+    width:calc(100% - 4px);
+    max-height:fit-content;
+    min-height:fit-content;
+    height:fit-content;
+    overflow: hidden;
+    display:grid;
+    grid-template-columns: 20px 1fr 20px;
+    // grid-template-rows:
+    // 20px max-content max-content max-content max-content 20px;
+    grid-template-rows:
+    20px max-content max-content max-content max-content; // last 20px buffer is handled within app-question-menu-element
+    grid-template-areas:
+    '. . .'
+    '. categories .'
+    '. header .'
+    '. choices .'
+    'menu menu menu';
+    // '. . .'; // last 20px buffer is handled within app-question-menu-element
+    row-gap:10px;
+    app-question-header-element {
+        grid-area:header;
+    }
+    app-question-choices-element {
+        grid-area:choices;
+    }
+    app-question-category-list-element {
+        grid-area:categories;
+    }
+    app-question-menu-element {
+        grid-area:menu;
+    }
+    &:hover {
+        border-color: white;
+    }
+}

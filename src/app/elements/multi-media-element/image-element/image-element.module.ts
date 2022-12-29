@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DiscussionElementComponent } from './discussion-element.component';
+import { ImageElementComponent } from './image-element.component';
 
 
 
 @NgModule({
   declarations: [
-    DiscussionElementComponent
+    ImageElementComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    DiscussionElementComponent
+    ImageElementComponent
   ]
 })
-export class DiscussionElementModule { }
+export class ImageElementModule { }

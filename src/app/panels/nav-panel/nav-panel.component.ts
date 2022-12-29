@@ -8,5 +8,5 @@ import { BehaviorSubject } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavPanelComponent {
-  selection: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+  selection: BehaviorSubject<number> = new BehaviorSubject<number>(2);
 }

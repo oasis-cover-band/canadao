@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { leftRouterAnimations, mainRouterAnimations, navRouterAnimations, rightRouterAnimations, searchRouterAnimations } from './animations';
+import { asideRouterAnimations, mainRouterAnimations, navRouterAnimations, topRouterAnimations } from './animations';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +9,8 @@ import { leftRouterAnimations, mainRouterAnimations, navRouterAnimations, rightR
   animations: [
     navRouterAnimations,
     mainRouterAnimations,
-    leftRouterAnimations,
-    rightRouterAnimations,
-    searchRouterAnimations
+    asideRouterAnimations,
+    topRouterAnimations
   ]
 })
 export class AppComponent {

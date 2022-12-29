@@ -1,0 +1,24 @@
+:host {
+    transition:var(--transition);
+    cursor: pointer;
+    h4 {
+        transition:var(--transition);
+    }
+    &:hover {
+        &.blue {
+            h4 {
+                color: var(--blue);
+            }
+        }
+        &.green {
+            h4 {
+                color: var(--green);
+            }
+        }
+        &.red {
+            h4 {
+                color: var(--red);
+            }
+        }
+    }
+}

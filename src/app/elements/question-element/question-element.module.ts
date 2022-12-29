@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { QuestionElementComponent } from './question-element.component';
+import { QuestionHeaderElementModule } from './question-header-element/question-header-element.module';
+import { QuestionChoicesElementModule } from './question-choices-element/question-choices-element.module';
+import { QuestionCategoryListElementModule } from './question-category-list-element/question-category-list-element.module';
+import { QuestionMenuElementModule } from './question-menu-element/question-menu-element.module';
 
 
 
@@ -9,7 +13,11 @@ import { QuestionElementComponent } from './question-element.component';
     QuestionElementComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    QuestionHeaderElementModule,
+    QuestionChoicesElementModule,
+    QuestionCategoryListElementModule,
+    QuestionMenuElementModule
   ],
   exports: [
     QuestionElementComponent

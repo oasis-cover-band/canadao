@@ -1,0 +1,55 @@
+:host {
+    transition:var(--transition);
+    background:var(--gray-2);
+    border-radius:var(--border-radius);
+    border:2px solid transparent;
+    &.blue {
+        background: var(--blue);
+    }
+    &.orange {
+        background: var(--orange);
+        ::selection {
+            background: var(--orange);
+        }
+    }
+    &.green {
+        background: var(--green);
+        ::selection {
+            background: var(--green);
+        }
+    }
+    &.red {
+        background: var(--red);
+        ::selection {
+            background: var(--red);
+        }
+    }
+    &.pink {
+        background: var(--pink);
+        ::selection {
+            background: var(--pink);
+        }
+    }
+    &.purple {
+        background: var(--purple);
+        ::selection {
+            background: var(--purple);
+        }
+    }
+    font-variant-caps: all-small-caps;
+    cursor: pointer;
+    display:grid;
+    grid-template-columns: 10px 1fr 10px;
+    grid-template-rows: 10px 1fr 10px;
+    grid-template-areas:
+    '. . .'
+    '. category .'
+    '. . .';
+    h6 {
+        grid-area:category;
+        font-weight:600;
+    }
+    &:hover {
+        border-color:var(--white);
+    }
+}

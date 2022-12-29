@@ -1,26 +1,9 @@
 import { animate, style, transition, trigger } from "@angular/animations";
 
-export const leftRouterAnimations =
-trigger('leftRouterAnimations',
-    [
-    transition(
-        ':leave', 
-        [
-            
-        ],
-    ),
-    transition(
-        ':enter', 
-        [
-
-        ]
-    ),
-    ]
-);
 
 
-export const rightRouterAnimations =
-trigger('rightRouterAnimations',
+export const asideRouterAnimations =
+trigger('asideRouterAnimations',
     [
     transition(
         ':leave', 
@@ -76,8 +59,8 @@ trigger('navRouterAnimations',
 );
 
 
-export const searchRouterAnimations =
-trigger('searchRouterAnimations',
+export const topRouterAnimations =
+trigger('topRouterAnimations',
     [
     transition(
         ':leave', 

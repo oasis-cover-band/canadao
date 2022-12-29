@@ -1,6 +1,7 @@
 :host {
-    grid-area:content;
     background:var(--gray-0);
+    border-radius: var(--border-radius);
+    grid-area:content;
     display:grid;
     grid-template-areas:
     '.'
@@ -11,7 +12,6 @@
     grid-template-rows: 20px max-content max-content 20px;
     column-gap:10px;
     row-gap:10px;
-    border-radius: var(--border-radius);
     height:fit-content;
     max-height:fit-content;
     min-height:fit-content;
@@ -49,14 +49,66 @@
             grid-template-rows: 20px 1fr 20px;
             column-gap:10px;
             cursor: pointer;
-            &.active {
-                background:var(--gray-1);
+            position:relative;
+            z-index:1;
+            h6 {
+                transition: var(--transition);
+                filter:brightness(0.5);
+                grid-area:list-item;
+                z-index: 2;
+            }
+            &:before {
+                transition: var(--transition);
+                content:'';
+                position:absolute;
+                top:0px;
+                right:100%;
+                bottom:0px;
+                left:0px;
+                background:var(--blue);
+                z-index:0;
+                -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0) 0%, rgb(0, 0, 0, 0) 75%);
+                mask-image: linear-gradient(90deg, rgba(0, 0, 0) 0%, rgb(0, 0, 0, 0) 75%);     
+                filter:brightness(0.5);
+            }
+            &:after {
+                transition: var(--transition);
+                content:'';
+                position:absolute;
+                top:0px;
+                right:calc(100% - 10px);
+                bottom:0px;
+                left:0px;
+                background:var(--blue);
+                opacity:0;
+                z-index:0;
             }
             &:hover {
-                background: var(--gray-2);
+                // background: var(--gray-2);
+                &:before {
+                    right:50%;
+                }
+                &:after {
+                    opacity:1;
+                }
+                h6 {
+                    filter:brightness(1);
+                }
             }
-            h6 {
-                grid-area:list-item;
+            &.active {
+                background:var(--gray-1);
+                h6 {
+                    filter:brightness(1);
+                    transform:scale(2) translateX(45%);
+                }
+                &:before {
+                    right:50%;
+                    background:var(--red);
+                }
+                &:after {
+                    opacity:1;
+                    background:var(--red);
+                }
             }
         }
     }

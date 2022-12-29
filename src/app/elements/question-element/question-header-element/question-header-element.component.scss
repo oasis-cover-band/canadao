@@ -1,0 +1,18 @@
+:host {
+    max-width:100%;
+    min-width:100%;
+    width:100%;
+    max-height:fit-content;
+    min-height:fit-content;
+    height:fit-content;
+    display:grid;
+    grid-template-areas: 'text';
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    h5 {
+        justify-self: center;
+        text-align: center;
+        grid-area: text;
+        font-size:2rem;
+    }
+}

@@ -1,1 +1,5 @@
-<p>question-menu-element works!</p>
+<app-section-element class="grid">
+    <app-question-menu-item-element *ngFor="let menuItem of this.menuItems; let index = index; trackBy: menuItemTrackBy"
+    [menuItem]="menuItem"
+    [hoverClass]="menuItem.hover"></app-question-menu-item-element>
+</app-section-element>

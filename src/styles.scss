@@ -5,10 +5,18 @@
     --gray-1:#141518;
     --gray-2:#212227;
 
-    --red:#FFA69E;
-    --blue:#93E1D8;
-    --light-blue:#DDFFF7;
-    --white: #EEE5E9;
+    --red:#A8201A;
+    --light-red:#FFA69E;
+    --dark-blue:#086788;
+    --blue:#3083DC;
+    --light-blue:#93E1D8;
+    --white:#EEE5E9;
+    --purple:#8367C7;
+    --dark-purple:#242038;
+    --yellow:#F3CA40;
+    --green:#285238;
+    --orange:#A24936;
+    --pink:#AB2346;
 
     --border-radius:10px;
 
@@ -36,6 +44,12 @@ html, body {
 html {
     font-family: 'Plus Jakarta Sans';
     font-size:16px;
+    @media (max-width:880px) {
+        font-size:14px;
+    }
+    @media (max-width:440px) {
+        font-size:12px;
+    }
     background:var(--gray-1);
 
     
