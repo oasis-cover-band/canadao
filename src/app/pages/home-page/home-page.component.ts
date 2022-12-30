@@ -20,7 +20,7 @@ export class HomePageComponent {
     },
     {
       text: 'Hey this is a test. The question is long on purpose.',
-      type: 'two-choice',
+      type: 'multi-choice',
       categories: ['politics', 'crime', 'international'],
       votes: [],
       comments: []

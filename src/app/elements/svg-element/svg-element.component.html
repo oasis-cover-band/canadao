@@ -1,1 +1,5 @@
-<p>svg-element works!</p>
+<svg [class]="this.icon" aria-hidden="true" focusable="false" [attr.fill]="this.fill"
+[style.width]="this.width"
+[style.height]="this.height">
+    <use [attr.href]="this.uri + this.icon + '.svg' + '#' + this.icon" [attr.fill]="this.fill"></use>
+</svg>

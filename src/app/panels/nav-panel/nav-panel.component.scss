@@ -51,11 +51,16 @@
             cursor: pointer;
             position:relative;
             z-index:1;
+            app-svg-element {
+                grid-area:icon;
+                align-self: center;
+            }
             h6 {
                 transition: var(--transition);
                 filter:brightness(0.5);
                 grid-area:list-item;
                 z-index: 2;
+                align-self: center;
             }
             &:before {
                 transition: var(--transition);
@@ -99,7 +104,7 @@
                 background:var(--gray-1);
                 h6 {
                     filter:brightness(1);
-                    transform:scale(2) translateX(45%);
+                    transform:scale(2) translateX(25%);
                 }
                 &:before {
                     right:50%;

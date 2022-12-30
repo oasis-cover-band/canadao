@@ -51,9 +51,11 @@
 
     main.content {
         display:grid;
-        grid-template-areas:'content';
+        grid-template-areas:
+        '.'
+        'content';
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
+        grid-template-rows: 20px 1fr;
         grid-area:main;
         max-width:100%;
         max-height:100%;
@@ -63,6 +65,7 @@
         height:100%;
         overflow-x:hidden;
         overflow-y: scroll;
+        margin-top:-20px;
     }
 
     aside.relatables {

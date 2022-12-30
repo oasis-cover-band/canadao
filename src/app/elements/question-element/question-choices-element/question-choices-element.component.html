@@ -1,1 +1,9 @@
-<p>question-choices-element works!</p>
+<ng-container *ngIf="this.type === 'custom-choice'">
+    <app-question-custom-choice-element></app-question-custom-choice-element>
+</ng-container>
+<ng-container *ngIf="this.type === 'multi-choice'">
+    <app-question-multi-choice-element></app-question-multi-choice-element>
+</ng-container>
+<ng-container *ngIf="this.type === 'two-choice'">
+    <app-question-two-choice-element></app-question-two-choice-element>
+</ng-container>

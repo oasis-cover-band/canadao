@@ -1,0 +1,18 @@
+:host {
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 'icon';
+    pointer-events: none;
+    cursor: pointer;
+    transition: var(--transition);
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    svg {
+        grid-area:icon;
+        pointer-events: none;
+        z-index:2;
+    }
+}

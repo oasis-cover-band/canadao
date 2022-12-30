@@ -10,6 +10,9 @@ import { SvgElementComponent } from './svg-element.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    SvgElementComponent
   ]
 })
 export class SvgElementModule { }

@@ -11,17 +11,28 @@
     height:fit-content;
     overflow: hidden;
     display:grid;
-    grid-template-columns: 20px 1fr 20px;
+    grid-template-columns: 20px 20px 1fr 20px 20px;
     // grid-template-rows:
     // 20px max-content max-content max-content max-content 20px;
     grid-template-rows:
-    20px max-content max-content max-content max-content; // last 20px buffer is handled within app-question-menu-element
+    20px max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content; // last 20px buffer is handled within app-question-menu-element
     grid-template-areas:
-    '. . .'
-    '. categories .'
-    '. header .'
-    '. choices .'
-    'menu menu menu';
+    '. . . . .'
+    '. categories categories categories .'
+    '. . . . .'
+    '. . header . .'
+    '. . . . .'
+    '. . . . .'
+    '. . . . .'
+    '. . . . .'
+    '. . . . .'
+    '. choices choices choices .'
+    '. . . . .'
+    '. . . . .'
+    '. . . . .'
+    '. . . . .'
+    '. . . . .'
+    'menu menu menu menu menu';
     // '. . .'; // last 20px buffer is handled within app-question-menu-element
     row-gap:10px;
     app-question-header-element {

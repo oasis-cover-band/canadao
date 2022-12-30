@@ -9,4 +9,8 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class NavPanelComponent {
   selection: BehaviorSubject<number> = new BehaviorSubject<number>(2);
+
+  navigate(selection: number): void {
+    this.selection.next(selection);
+  }
 }

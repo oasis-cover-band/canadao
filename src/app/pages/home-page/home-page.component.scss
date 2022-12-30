@@ -7,10 +7,9 @@
     height:100%;
     display:grid;
     grid-template-areas:
-    'grid'
-    '.';
+    'grid';
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 20px;
+    grid-template-rows: 1fr;
     app-section-element.grid {
         max-width:100%;
         min-width:100%;

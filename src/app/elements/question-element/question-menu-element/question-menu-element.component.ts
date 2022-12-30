@@ -12,19 +12,19 @@ export class QuestionMenuElementComponent {
     {
       link: '',
       text: 'Discussion',
-      icon: 'chat',
+      icon: 'message',
       hover: 'blue'
     },
     {
       link: '',
       text: 'Share',
-      icon: 'share',
+      icon: 'share-variant',
       hover: 'green'
     },
     {
       link: '',
       text: 'Report',
-      icon: 'flag',
+      icon: 'alert',
       hover: 'red'
     }
   ];

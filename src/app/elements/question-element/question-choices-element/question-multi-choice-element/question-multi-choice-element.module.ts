@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavPanelComponent } from './nav-panel.component';
+import { QuestionMultiChoiceElementComponent } from './question-multi-choice-element.component';
 import { SvgElementModule } from 'src/app/elements/svg-element/svg-element.module';
 
 
 
 @NgModule({
   declarations: [
-    NavPanelComponent
+    QuestionMultiChoiceElementComponent
   ],
   imports: [
     CommonModule,
     SvgElementModule
   ],
   exports: [
-    NavPanelComponent
+    QuestionMultiChoiceElementComponent
   ]
 })
-export class NavPanelModule { }
+export class QuestionMultiChoiceElementModule { }

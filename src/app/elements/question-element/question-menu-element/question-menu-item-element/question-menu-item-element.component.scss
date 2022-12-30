@@ -1,10 +1,27 @@
 :host {
     transition:var(--transition);
     cursor: pointer;
+    display:grid;
+    grid-template-areas:
+    'icon'
+    'text';
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content 1fr;
+    row-gap:5px;
+    app-svg-element {
+        grid-area:icon;
+        z-index:1;
+    }
     h4 {
+        grid-area:text;
         transition:var(--transition);
+        z-index:2;
     }
     &:hover {
+        app-svg-element {
+            transform:scale(2);
+            opacity:0.2;
+        }
         &.blue {
             h4 {
                 color: var(--blue);
@@ -19,6 +36,11 @@
             h4 {
                 color: var(--red);
             }
+        }
+    }
+    @media (max-width:400px) {
+        h4 {
+            font-size:0px;
         }
     }
 }
