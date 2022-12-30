@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { User } from 'src/app/interfaces/user';
 
 @Component({
   selector: 'app-question-two-choice-element',
@@ -7,5 +8,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class QuestionTwoChoiceElementComponent {
+  @Input() loggedInAs!: User;
+  @Output() voted: EventEmitter<number> = new EventEmitter<number>();
 
+  vote(choiceIndex: number) {
+    this.voted.emit(choiceIndex);
+  }
 }

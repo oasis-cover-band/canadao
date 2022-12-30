@@ -2,6 +2,28 @@ import { animate, style, transition, trigger } from "@angular/animations";
 
 
 
+export const ngIfHeightAnimations =
+trigger('ngIfHeightAnimations',
+    [
+    transition(
+        ':leave', 
+        [
+            style({ height: '*', maxHeight: '*', minHeight: '*' }),
+            animate('0.25s ease-in', 
+                style({ height: '0%', maxHeight: '0%', minHeight: '0%' }))
+        ],
+    ),
+    transition(
+        ':enter', 
+        [
+            style({ height: '0%', maxHeight: '0%', minHeight: '0%' }),
+            animate('0.25s ease-in', 
+                style({ height: '*', maxHeight: '*', minHeight: '*' } ))
+        ]
+    ),
+    ]
+);
+
 export const asideRouterAnimations =
 trigger('asideRouterAnimations',
     [

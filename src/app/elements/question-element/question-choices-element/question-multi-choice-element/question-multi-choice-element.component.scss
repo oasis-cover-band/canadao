@@ -15,6 +15,7 @@
     align-items: center;
     pointer-events: none;
     column-gap:10px;
+    overflow: hidden;
     app-svg-element.v-oppose {
         grid-area:v-oppose;
     }

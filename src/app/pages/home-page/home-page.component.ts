@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Question } from 'src/app/interfaces/question';
+import { User } from 'src/app/interfaces/user';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-home-page',
@@ -10,73 +12,14 @@ import { Question } from 'src/app/interfaces/question';
 })
 export class HomePageComponent {
 
-  questions: BehaviorSubject<Question[]> = new BehaviorSubject<Question[]>([
-    {
-      text: 'Hey this is a test. The question is long on purpose.',
-      type: 'two-choice',
-      categories: ['politics', 'crime', 'international'],
-      votes: [],
-      comments: []
-    },
-    {
-      text: 'Hey this is a test. The question is long on purpose.',
-      type: 'multi-choice',
-      categories: ['politics', 'crime', 'international'],
-      votes: [],
-      comments: []
-    },
-    {
-      text: 'Hey this is a test. The question is long on purpose.',
-      type: 'two-choice',
-      categories: ['politics', 'crime', 'international'],
-      votes: [],
-      comments: []
-    },
-    {
-      text: 'Hey this is a test. The question is long on purpose.',
-      type: 'two-choice',
-      categories: ['politics', 'crime', 'international'],
-      votes: [],
-      comments: []
-    },
-    {
-      text: 'Hey this is a test. The question is long on purpose.',
-      type: 'two-choice',
-      categories: ['politics', 'crime', 'international'],
-      votes: [],
-      comments: []
-    },
-    {
-      text: 'Hey this is a test. The question is long on purpose.',
-      type: 'two-choice',
-      categories: ['politics', 'crime', 'international'],
-      votes: [],
-      comments: []
-    },
-    {
-      text: 'Hey this is a test. The question is long on purpose.',
-      type: 'two-choice',
-      categories: ['politics', 'crime', 'international'],
-      votes: [],
-      comments: []
-    },
-    {
-      text: 'Hey this is a test. The question is long on purpose.',
-      type: 'two-choice',
-      categories: ['politics', 'crime', 'international'],
-      votes: [],
-      comments: []
-    },
-    {
-      text: 'Hey this is a test. The question is long on purpose.',
-      type: 'two-choice',
-      categories: ['politics', 'crime', 'international'],
-      votes: [],
-      comments: []
-    }
-  ]);
+  questions: BehaviorSubject<Question[]> = this.dataService.questions;
+  loggedInAs: BehaviorSubject<User> = this.dataService.loggedInAs;
 
-  questionTrackBy(index: number, question: Question): string {
-    return question.text;
+  constructor(
+    private dataService: DataService
+  ) {}
+
+  questionTrackBy(index: number, question: Question): number {
+    return question.id;
   }
 }

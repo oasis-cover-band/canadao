@@ -1,4 +1,10 @@
-<app-section-element class="grid">
-    <app-question-element *ngFor="let question of (this.questions | async)!; let index = index; trackBy: questionTrackBy"
-    [question]="question"></app-question-element>
-</app-section-element>
+<ng-container *ngIf="{
+    questions: (this.questions | async)!,
+    loggedInAs: (this.loggedInAs | async)!
+} as data$$">
+    <app-section-element class="grid">
+        <app-question-element *ngFor="let question of data$$.questions; let index = index; trackBy: questionTrackBy"
+        [loggedInAs]="data$$.loggedInAs"
+        [question]="question"></app-question-element>
+    </app-section-element>
+</ng-container>
