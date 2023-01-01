@@ -62,6 +62,25 @@ trigger('mainRouterAnimations',
 );
 
 
+export const centerPanelRouterAnimations =
+trigger('centerPanelRouterAnimations',
+    [
+    transition(
+        ':leave', 
+        [
+            
+        ],
+    ),
+    transition(
+        ':enter', 
+        [
+
+        ]
+    ),
+    ]
+);
+
+
 export const navRouterAnimations =
 trigger('navRouterAnimations',
     [

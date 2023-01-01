@@ -12,7 +12,10 @@ import { AsidePanelModule } from './panels/aside-panel/aside-panel.module';
 const routes: Routes = [
   {path: '', component: TopPanelComponent, outlet: 'top'},
   {path: '', component: NavPanelComponent, outlet: 'nav'},
-  {path: '', component: CenterPanelComponent, outlet: 'main'},
+  { path: '',
+    loadChildren: () => import('./panels/center-panel/center-panel.module').then(m => m.CenterPanelModule),
+    outlet: 'main'
+  },
   {path: '', component: AsidePanelComponent, outlet: 'aside'}
 ];
 

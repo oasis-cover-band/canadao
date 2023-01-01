@@ -6,38 +6,33 @@
 *ngIf="{
     selection: (this.selection | async)!
 } as data$$">
-    <li [ngClass]="{
-        'active': data$$.selection === 0
-    }"
-    (click)="this.navigate(0)">
+    <li
+    [routerLink]="[{ outlets: { main: ['home'] } }]"
+    routerLinkActive="active">
         <app-svg-element icon="home" fill="var(--white)"></app-svg-element>
         <h6>Home</h6>
     </li>
-    <li [ngClass]="{
-        'active': data$$.selection === 1
-    }"
-    (click)="this.navigate(1)">
+    <li
+    [routerLink]="[{ outlets: { main: ['dashboard'] } }]"
+    routerLinkActive="active">
         <app-svg-element icon="chart-bar" fill="var(--white)"></app-svg-element>
         <h6>Dashboard</h6>
     </li>
-    <li [ngClass]="{
-        'active': data$$.selection === 2
-    }"
-    (click)="this.navigate(2)">
+    <li
+    [routerLink]="[{ outlets: { main: ['questions'] } }]"
+    routerLinkActive="active">
         <app-svg-element icon="help-circle" fill="var(--white)"></app-svg-element>
         <h6>Questions</h6>
     </li>
-    <li [ngClass]="{
-        'active': data$$.selection === 3
-    }"
-    (click)="this.navigate(3)">
+    <li
+    [routerLink]="[{ outlets: { main: ['groups'] } }]"
+    routerLinkActive="active">
         <app-svg-element icon="account-group" fill="var(--white)"></app-svg-element>
         <h6>Groups</h6>
     </li>
-    <li [ngClass]="{
-        'active': data$$.selection === 4
-    }"
-    (click)="this.navigate(4)">
+    <li
+    [routerLink]="[{ outlets: { main: ['topics'] } }]"
+    routerLinkActive="active">
         <app-svg-element icon="bookshelf" fill="var(--white)"></app-svg-element>
         <h6>Topics</h6>
     </li>
