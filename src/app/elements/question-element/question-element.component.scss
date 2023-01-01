@@ -18,7 +18,7 @@
     20px max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content; // last 20px buffer is handled within app-question-menu-element
     grid-template-areas:
     '. . . . .'
-    '. categories categories categories .'
+    '. topics topics topics .'
     '. . . . .'
     '. . header . .'
     '. . . . .'
@@ -41,13 +41,13 @@
     app-question-choices-element {
         grid-area:choices;
     }
-    app-question-category-list-element {
-        grid-area:categories;
+    app-question-topic-list-element {
+        grid-area:topics;
     }
     app-question-menu-element {
         grid-area:menu;
     }
     &:hover {
-        border-color: white;
+        border-color: var(--white);
     }
 }

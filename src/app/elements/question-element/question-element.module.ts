@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { QuestionElementComponent } from './question-element.component';
 import { QuestionHeaderElementModule } from './question-header-element/question-header-element.module';
 import { QuestionChoicesElementModule } from './question-choices-element/question-choices-element.module';
-import { QuestionCategoryListElementModule } from './question-category-list-element/question-category-list-element.module';
+import { QuestionTopicListElementModule } from './question-topic-list-element/question-topic-list-element.module';
 import { QuestionMenuElementModule } from './question-menu-element/question-menu-element.module';
 
 
@@ -16,7 +16,7 @@ import { QuestionMenuElementModule } from './question-menu-element/question-menu
     CommonModule,
     QuestionHeaderElementModule,
     QuestionChoicesElementModule,
-    QuestionCategoryListElementModule,
+    QuestionTopicListElementModule,
     QuestionMenuElementModule
   ],
   exports: [

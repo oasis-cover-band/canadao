@@ -36,6 +36,16 @@
             background: var(--purple);
         }
     }
+    &.yellow {
+        background: var(--yellow);
+        h6 {
+            color: var(--gray-0);
+        }
+        ::selection {
+            background: var(--yellow);
+            color: var(--white);
+        }
+    }
     font-variant-caps: all-small-caps;
     cursor: pointer;
     display:grid;
@@ -43,10 +53,10 @@
     grid-template-rows: 10px 1fr 10px;
     grid-template-areas:
     '. . .'
-    '. category .'
+    '. topic .'
     '. . .';
     h6 {
-        grid-area:category;
+        grid-area:topic;
         font-weight:600;
     }
     &:hover {

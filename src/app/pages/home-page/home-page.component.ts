@@ -19,7 +19,7 @@ export class HomePageComponent {
     private dataService: DataService
   ) {}
 
-  questionTrackBy(index: number, question: Question): number {
+  questionTrackBy(index: number, question: Question): string {
     return question.id;
   }
 }

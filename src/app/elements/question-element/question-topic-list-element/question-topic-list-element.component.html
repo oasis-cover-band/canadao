@@ -1,0 +1,11 @@
+<app-question-topic-item-element *ngFor="let topic of this.topics; let index = index; trackBy: topicTrackBy"
+[topic]="topic"
+[ngClass]="{
+    'blue': this.topic === 'politics',
+    'orange': this.topic === 'crime',
+    'green': this.topic === 'drugs',
+    'red': this.topic === 'canada',
+    'pink': this.topic === 'provincial',
+    'purple': this.topic === 'local',
+    'yellow': this.topic === 'international'
+}"></app-question-topic-item-element>

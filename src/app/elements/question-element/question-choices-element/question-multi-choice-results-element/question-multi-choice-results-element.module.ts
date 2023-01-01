@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { QuestionMultiChoiceResultsElementComponent } from './question-multi-choice-results-element.component';
+import { EChartElementModule } from 'src/app/elements/e-chart-element/e-chart-element.module';
 
 
 
@@ -9,7 +10,8 @@ import { QuestionMultiChoiceResultsElementComponent } from './question-multi-cho
     QuestionMultiChoiceResultsElementComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    EChartElementModule
   ],
   exports: [
     QuestionMultiChoiceResultsElementComponent

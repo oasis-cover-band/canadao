@@ -19,7 +19,7 @@
     }
     &:hover {
         app-svg-element {
-            transform:scale(2);
+            transform:translateY(0px) scale(2);
             opacity:0.2;
         }
         &.blue {

@@ -13,7 +13,7 @@ import { User } from 'src/app/interfaces/user';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class QuestionChoicesElementComponent {
-  @Input() type!: Question['type'];
+  @Input() question!: Question;
   @Input() alreadyVoted!: boolean;
   @Input() loggedInAs!: User;
   @Output() voted: EventEmitter<number> = new EventEmitter<number>();

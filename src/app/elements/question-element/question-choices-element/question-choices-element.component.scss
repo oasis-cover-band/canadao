@@ -16,8 +16,12 @@
     align-items: center;
     app-question-custom-choice-element,
     app-question-multi-choice-element,
-    app-question-two-choice-element {
+    app-question-two-choice-element,
+    app-question-custom-choice-results-element,
+    app-question-multi-choice-results-element,
+    app-question-two-choice-results-element  {
         grid-area:choices;
         align-self: center;
+        justify-self: center;
     }
 }

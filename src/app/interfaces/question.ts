@@ -3,11 +3,11 @@ import { User } from "./user";
 import { Vote } from "./vote";
 
 export interface Question {
-    id: number;
+    id: string;
     text: string;
     type: 'multi-choice' | 'two-choice' | 'custom-choice';
-    categories: string[];
+    topics: string[];
     votedUsers: User['id'][];
-    votes?: Vote[];
+    votes: Vote[];
     comments?: QuestionComment;
 }

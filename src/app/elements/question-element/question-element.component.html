@@ -1,6 +1,6 @@
-<app-question-category-list-element [categories]="this.question.categories"></app-question-category-list-element>
+<app-question-topic-list-element [topics]="this.question.topics"></app-question-topic-list-element>
 <app-question-header-element [questionText]="this.question.text"></app-question-header-element>
-<app-question-choices-element [type]="this.question.type"
+<app-question-choices-element [question]="this.question"
 (voted)="this.vote($event)"
 [loggedInAs]="this.loggedInAs"
 [alreadyVoted]="(this.alreadyVoted | async)!"></app-question-choices-element>

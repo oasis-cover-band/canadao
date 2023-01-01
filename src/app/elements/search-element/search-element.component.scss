@@ -9,8 +9,12 @@
     '. . . .';
     grid-template-columns: 20px max-content 1fr 20px;
     grid-template-rows: 10px 1fr 10px;
+    column-gap:5px;
     input {
         grid-area:input;
+    }
+    app-svg-element {
+        grid-area:icon;
     }
     &:hover {
         background:var(--gray-2);

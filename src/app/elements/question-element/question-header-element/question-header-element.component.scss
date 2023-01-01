@@ -15,4 +15,9 @@
         grid-area: text;
         font-size:2rem;
     }
+    @media (max-width:600px) {
+        h5 {
+            font-size:1.5rem;
+        }
+    }
 }

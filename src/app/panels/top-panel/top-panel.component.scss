@@ -12,10 +12,20 @@
     max-width:100vw;
     width:100vw;
     column-gap:20px;
+    app-svg-element {
+        grid-area:icon;
+        display:none;
+        cursor: pointer;
+    }
     app-search-element {
         grid-area:search;
     }
     app-logo-element {
         grid-area:logo;
+    }
+    @media (max-width:1200px) {
+        app-svg-element {
+            display:grid;
+        }
     }
 }

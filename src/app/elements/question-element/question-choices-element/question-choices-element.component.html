@@ -1,15 +1,30 @@
-<ng-container *ngIf="this.type === 'custom-choice' && this.alreadyVoted === false">
+<ng-container *ngIf="this.question.type === 'custom-choice'">
     <app-question-custom-choice-element (voted)="this.vote($event)"
+    *ngIf="this.alreadyVoted === false"
     [@ngIfHeightAnimations]
     [loggedInAs]="this.loggedInAs"></app-question-custom-choice-element>
+
+    <app-question-custom-choice-results-element
+    *ngIf="this.alreadyVoted === true"
+    [question]="this.question"></app-question-custom-choice-results-element>
 </ng-container>
-<ng-container *ngIf="this.type === 'multi-choice' && this.alreadyVoted === false">
+<ng-container *ngIf="this.question.type === 'multi-choice'">
     <app-question-multi-choice-element (voted)="this.vote($event)"
+    *ngIf="this.alreadyVoted === false"
     [@ngIfHeightAnimations]
     [loggedInAs]="this.loggedInAs"></app-question-multi-choice-element>
+
+    <app-question-multi-choice-results-element
+    *ngIf="this.alreadyVoted === true"
+    [question]="this.question"></app-question-multi-choice-results-element>
 </ng-container>
-<ng-container *ngIf="this.type === 'two-choice' && this.alreadyVoted === false">
+<ng-container *ngIf="this.question.type === 'two-choice'">
     <app-question-two-choice-element (voted)="this.vote($event)"
+    *ngIf="this.alreadyVoted === false"
     [@ngIfHeightAnimations]
     [loggedInAs]="this.loggedInAs"></app-question-two-choice-element>
+
+    <app-question-two-choice-results-element
+    *ngIf="this.alreadyVoted === true"
+    [question]="this.question"></app-question-two-choice-results-element>
 </ng-container>

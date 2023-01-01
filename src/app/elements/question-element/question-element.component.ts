@@ -27,6 +27,12 @@ export class QuestionElementComponent implements OnInit {
     if (this.alreadyVoted.getValue() === false) {
       this.alreadyVoted.next(true);
       this.question.votedUsers.push(this.loggedInAs.id);
+      this.question.votes.push({
+        id: '',
+        userId: this.loggedInAs.id,
+        questionType: this.question.type,
+        voteOption: choiceIndex
+      });
       // add vote logic here
     }
   }
