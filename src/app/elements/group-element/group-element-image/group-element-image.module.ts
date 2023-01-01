@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GroupElementComponent } from './group-element.component';
+import { GroupElementImageComponent } from './group-element-image.component';
 
 
 
 @NgModule({
   declarations: [
-    GroupElementComponent
+    GroupElementImageComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    GroupElementComponent
+    GroupElementImageComponent
   ]
 })
-export class GroupElementModule { }
+export class GroupElementImageModule { }

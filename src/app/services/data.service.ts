@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { Group } from '../interfaces/group';
 import { Question } from '../interfaces/question';
+import { Topic } from '../interfaces/topic';
 import { User } from '../interfaces/user';
 
 @Injectable({
@@ -232,5 +234,60 @@ export class DataService {
   loggedInAs: BehaviorSubject<User> = new BehaviorSubject<User>({
     id: '6969'
   });
+
+  groups: BehaviorSubject<Group[]> = new BehaviorSubject<Group[]>([
+    {
+      id: '0',
+      name: 'Basic Questions',
+      description: 'description',
+      userIds: ['6969'],
+      questionIds: ['0', '1', '2', '3'],
+      inviteOnly: false
+    },
+    {
+      id: '1',
+      name: 'More Questions',
+      description: 'description',
+      userIds: ['6969'],
+      questionIds: ['4', '5', '6'],
+      inviteOnly: false
+    },
+    {
+      id: '2',
+      name: 'Something Something Group',
+      description: 'description',
+      userIds: [],
+      questionIds: ['0', '2'],
+      inviteOnly: false
+    },
+    {
+      id: '3',
+      name: 'Some Other Group',
+      description: 'description',
+      userIds: ['6969'],
+      questionIds: ['6', '3'],
+      inviteOnly: true
+    },
+    {
+      id: '4',
+      name: 'Again, Another Group',
+      description: 'description',
+      userIds: [],
+      questionIds: ['5', '6', '7'],
+      inviteOnly: false
+    },
+    {
+      id: '5',
+      name: 'Some Other Group Again',
+      description: 'description',
+      userIds: [],
+      questionIds: ['4'],
+      inviteOnly: true
+    }
+  ]);
+
+  topics: BehaviorSubject<Topic[]> = new BehaviorSubject<Topic[]>([
+
+  ]);
   constructor() { }
 }

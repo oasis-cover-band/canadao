@@ -10,7 +10,7 @@ import { TopicsPageComponent } from 'src/app/pages/topics-page/topics-page.compo
 import { TopicsPageModule } from 'src/app/pages/topics-page/topics-page.module';
 
 const routes: Routes = [
-    {path: '', redirectTo: 'home', pathMatch: 'prefix'},
+    {path: '', redirectTo: 'home', pathMatch: 'full'},
     {path: 'home', component: HomePageComponent},
     {path: 'dashboard', component: HomePageComponent},
     {path: 'questions', component: QuestionsPageComponent},

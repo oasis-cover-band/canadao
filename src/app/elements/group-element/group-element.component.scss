@@ -1,0 +1,28 @@
+:host {
+    transition:var(--transition);
+    background:var(--gray-0);
+    border-radius: var(--border-radius);
+    border:2px solid transparent;
+    max-width:calc(100% - 4px);
+    min-width:calc(100% - 4px);
+    width:calc(100% - 4px);
+    max-height:fit-content;
+    min-height:fit-content;
+    height:fit-content;
+    overflow: hidden;
+    display:grid;
+    grid-template-columns: 20px 1fr 20px;
+    grid-template-rows:
+    100px max-content max-content max-content max-content 20px;
+    grid-template-areas:
+    'image image image'
+    '. header .'
+    '. description .'
+    '. action .'
+    '. statistics .'
+    '. . .';
+    row-gap:10px;
+    &:hover {
+        border-color: var(--white);
+    }
+}

@@ -3,10 +3,10 @@
     background:var(--gray-0);
     display:grid;
     grid-template-areas:
-    '. . . . . .'
-    '. icon logo search buttons .'
-    '. . . . . .';
-    grid-template-columns: 20px max-content max-content 1fr max-content 20px;
+    '. . . . . . . .'
+    '. icon logo . search . buttons .'
+    '. . . . . . . .';
+    grid-template-columns: 20px max-content max-content 1fr minmax(200px, 1000px) 1.5fr max-content 20px;
     grid-template-rows: 20px 1fr 20px;
     min-width:100vw;
     max-width:100vw;

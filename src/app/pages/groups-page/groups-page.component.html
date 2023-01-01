@@ -1,1 +1,8 @@
-<p>groups-page works!</p>
+<ng-container *ngIf="{
+    groups: (this.groups | async)!
+} as data$$">
+    <app-section-element class="grid">
+        <app-group-element *ngFor="let group of data$$.groups; let index = index; trackBy: groupTrackBy"
+        [group]="group"></app-group-element>
+    </app-section-element>
+</ng-container>

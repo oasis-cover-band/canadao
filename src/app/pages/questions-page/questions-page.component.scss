@@ -23,7 +23,9 @@
         grid-auto-rows: max-content;
         grid-auto-columns: 1fr;
         justify-items: stretch;
-        justify-content:STRETCH;
+        justify-content:stretch;
+        align-content: start;
+        align-items: start;
         row-gap:10px;
     }
 }

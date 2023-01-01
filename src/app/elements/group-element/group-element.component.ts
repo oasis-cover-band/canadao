@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Group } from 'src/app/interfaces/group';
 
 @Component({
   selector: 'app-group-element',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./group-element.component.scss']
 })
 export class GroupElementComponent {
-
+  @Input() group!: Group;
 }
