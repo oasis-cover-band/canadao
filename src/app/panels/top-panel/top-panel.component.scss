@@ -16,6 +16,7 @@
         grid-area:icon;
         display:none;
         cursor: pointer;
+        pointer-events: all;
     }
     app-search-element {
         grid-area:search;
