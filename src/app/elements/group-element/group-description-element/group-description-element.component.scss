@@ -7,15 +7,13 @@
     height:100%;
     display:grid;
     grid-template-areas:
-    'image';
+    'description';
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    img {
-        grid-area:image;
-        height:100%;
-        width:100%;
-        max-width:100%;
-        object-fit: cover;
+    p {
+        grid-area:description;
+        font-size:0.75rem;
         overflow: hidden;
+        text-overflow: ellipsis;
     }
 }

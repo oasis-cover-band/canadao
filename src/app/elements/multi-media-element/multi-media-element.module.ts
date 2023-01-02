@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MultiMediaElementComponent } from './multi-media-element.component';
+import { ImageElementModule } from './image-element/image-element.module';
+import { VideoElementModule } from './video-element/video-element.module';
 
 
 
@@ -9,7 +11,9 @@ import { MultiMediaElementComponent } from './multi-media-element.component';
     MultiMediaElementComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ImageElementModule,
+    VideoElementModule
   ],
   exports: [
     MultiMediaElementComponent

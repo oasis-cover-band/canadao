@@ -13,19 +13,19 @@ export class QuestionElementComponent implements OnInit {
   @Input() question!: Question;
   @Input() loggedInAs!: User;
 
-  alreadyVoted: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
+  alreadyVoted: boolean = false;
 
   ngOnInit(): void {
     if (this.question.votedUsers.indexOf(this.loggedInAs.id) === -1) {
-      this.alreadyVoted.next(false);
+      this.alreadyVoted = false;
     } else {
-      this.alreadyVoted.next(true);
+      this.alreadyVoted = true;
     }
   }
 
   vote(choiceIndex: number): void {
-    if (this.alreadyVoted.getValue() === false) {
-      this.alreadyVoted.next(true);
+    if (this.alreadyVoted === false) {
+      this.alreadyVoted = true;
       this.question.votedUsers.push(this.loggedInAs.id);
       this.question.votes.push({
         id: '',

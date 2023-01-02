@@ -1,1 +1,5 @@
-<p>group-element works!</p>
+<app-group-image-element [src]="this.group.image"></app-group-image-element>
+<app-group-header-element [name]="this.group.name"></app-group-header-element>
+<app-group-description-element [description]="this.group.description"></app-group-description-element>
+<app-group-actions-element [alreadyMember]="this.alreadyMember" (groupAction)="this.toggleGroupMembership($event)"></app-group-actions-element>
+<app-group-statistics-element [userCount]="this.group.userIds.length" [questionCount]="this.group.questionIds.length"></app-group-statistics-element>

@@ -7,15 +7,10 @@
     height:100%;
     display:grid;
     grid-template-areas:
-    'image';
+    'button';
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    img {
-        grid-area:image;
-        height:100%;
-        width:100%;
-        max-width:100%;
-        object-fit: cover;
-        overflow: hidden;
+    app-button-element {
+        grid-area:button;
     }
 }

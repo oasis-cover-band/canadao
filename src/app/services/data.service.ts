@@ -240,6 +240,7 @@ export class DataService {
       id: '0',
       name: 'Basic Questions',
       description: 'description',
+      image: 'https://images.pexels.com/photos/11987710/pexels-photo-11987710.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       userIds: ['6969'],
       questionIds: ['0', '1', '2', '3'],
       inviteOnly: false
@@ -248,6 +249,7 @@ export class DataService {
       id: '1',
       name: 'More Questions',
       description: 'description',
+      image: 'https://images.pexels.com/photos/11987710/pexels-photo-11987710.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       userIds: ['6969'],
       questionIds: ['4', '5', '6'],
       inviteOnly: false
@@ -256,6 +258,7 @@ export class DataService {
       id: '2',
       name: 'Something Something Group',
       description: 'description',
+      image: 'https://images.pexels.com/photos/11987710/pexels-photo-11987710.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       userIds: [],
       questionIds: ['0', '2'],
       inviteOnly: false
@@ -264,6 +267,7 @@ export class DataService {
       id: '3',
       name: 'Some Other Group',
       description: 'description',
+      image: 'https://images.pexels.com/photos/11987710/pexels-photo-11987710.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       userIds: ['6969'],
       questionIds: ['6', '3'],
       inviteOnly: true
@@ -272,6 +276,7 @@ export class DataService {
       id: '4',
       name: 'Again, Another Group',
       description: 'description',
+      image: 'https://images.pexels.com/photos/11987710/pexels-photo-11987710.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       userIds: [],
       questionIds: ['5', '6', '7'],
       inviteOnly: false
@@ -280,6 +285,7 @@ export class DataService {
       id: '5',
       name: 'Some Other Group Again',
       description: 'description',
+      image: 'https://images.pexels.com/photos/11987710/pexels-photo-11987710.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       userIds: [],
       questionIds: ['4'],
       inviteOnly: true

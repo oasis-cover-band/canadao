@@ -1,8 +1,10 @@
 <ng-container *ngIf="{
-    groups: (this.groups | async)!
+    groups: (this.groups | async)!,
+    loggedInAs: (this.loggedInAs | async)!
 } as data$$">
     <app-section-element class="grid">
         <app-group-element *ngFor="let group of data$$.groups; let index = index; trackBy: groupTrackBy"
+        [loggedInAs]="data$$.loggedInAs"
         [group]="group"></app-group-element>
     </app-section-element>
 </ng-container>

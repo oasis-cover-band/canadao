@@ -3,5 +3,5 @@
 <app-question-choices-element [question]="this.question"
 (voted)="this.vote($event)"
 [loggedInAs]="this.loggedInAs"
-[alreadyVoted]="(this.alreadyVoted | async)!"></app-question-choices-element>
+[alreadyVoted]="this.alreadyVoted"></app-question-choices-element>
 <app-question-menu-element></app-question-menu-element>

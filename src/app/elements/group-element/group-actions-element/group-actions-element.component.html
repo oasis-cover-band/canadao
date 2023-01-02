@@ -1,0 +1,6 @@
+<app-button-element *ngIf="this.alreadyMember" class="red" (click)="this.toggleGroupMembership()">
+    Leave Group
+</app-button-element>
+<app-button-element *ngIf="!this.alreadyMember" (click)="this.toggleGroupMembership()">
+    Join Group
+</app-button-element>

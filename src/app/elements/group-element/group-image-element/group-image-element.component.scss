@@ -10,12 +10,7 @@
     'image';
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    img {
+    app-multi-media-element {
         grid-area:image;
-        height:100%;
-        width:100%;
-        max-width:100%;
-        object-fit: cover;
-        overflow: hidden;
     }
 }

@@ -13,16 +13,31 @@
     display:grid;
     grid-template-columns: 20px 1fr 20px;
     grid-template-rows:
-    100px max-content max-content max-content max-content 20px;
+    100px max-content 100px max-content max-content 20px;
     grid-template-areas:
     'image image image'
     '. header .'
     '. description .'
-    '. action .'
+    '. actions .'
     '. statistics .'
     '. . .';
-    row-gap:10px;
+    row-gap:20px;
     &:hover {
         border-color: var(--white);
+    }
+    app-group-image-element {
+        grid-area:image;
+    }
+    app-group-header-element {
+        grid-area:header;
+    }
+    app-group-description-element {
+        grid-area:description;
+    }
+    app-group-actions-element {
+        grid-area:actions;
+    }
+    app-group-statistics-element {
+        grid-area:statistics;
     }
 }
