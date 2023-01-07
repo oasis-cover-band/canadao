@@ -1,28 +1,29 @@
 @import './assets/fonts/stylesheet.css';
 
 :root {
-    --gray-0:#090A0B; 
-    --gray-1:#141518;
-    --gray-2:#212227;
-
-    // --gray-0:#b4b6b8; 
-    // --gray-1:#acadae;
-    // --gray-2:#636363;
-
-    --red:#A8201A;
-    --light-red:#FFA69E;
-    --dark-blue:#086788;
-    --blue:#3083DC;
-    --light-blue:#93E1D8;
     --white:#EEE5E9;
-    --purple:#8367C7;
-    --dark-purple:#242038;
-    --yellow:#F3CA40;
-    --green:#285238;
-    --orange:#A24936;
-    --pink:#AB2346;
+    --black:#090A0B; 
+    --black-see-through:#090a0bc7; 
+    --gray-0:#141518;
+    --gray-1:#212227;
 
-    --border-radius:10px;
+    // --black:#b4b6b8; 
+    // --gray-0:#acadae;
+    // --gray-1:#636363;
+
+    --red:#B33951;
+    --light-red:#E94057;
+    --dark-blue:#0352A0;
+    --blue:#0575E6;
+    --light-blue:#4BA3FB;
+    --purple:#8A2387;
+    --dark-purple:#48284A;
+    --yellow:#F5B700;
+    --green:#00F260;
+    --orange:#F27121;
+    --pink:#F786AA;
+
+    --border-radius:5px;
 
     --transition: 0.25s ease-in;
 }
@@ -54,13 +55,13 @@ html {
     @media (max-width:440px) {
         font-size:12px;
     }
-    background:var(--gray-1);
+    background:var(--gray-0);
 
     
     scrollbar-width: thin;          /* "auto" or "thin" */
-    scrollbar-color: var(--gray-0) rgba(0,0,0,0);   /* scroll thumb and track */
+    scrollbar-color: var(--black) rgba(0,0,0,0);   /* scroll thumb and track */
     ::-webkit-scrollbar {
-        border-color: var(--gray-1);
+        border-color: var(--gray-0);
         border-radius: var(--border-radius);       /* roundness of the scroll thumb */
       width: 0px;               /* width of the entire scrollbar */
       height: 0px;               /* width of the entire scrollbar */
@@ -73,7 +74,7 @@ html {
     }
 
     ::-webkit-scrollbar-thumb {
-        background: var(--gray-1); /* Old browsers */
+        background: var(--gray-0); /* Old browsers */
       border-radius: var(--border-radius);       /* roundness of the scroll thumb */
       border: 0px solid rgba(0, 0, 0, 0.0);  /* creates padding around scroll thumb */
     }
@@ -84,16 +85,16 @@ html {
     }
     
     ::selection {
-        color: var(--gray-0);
+        color: var(--black);
         background: var(--blue);
     }
 
     * {
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none;  /* Firefox */
-        scrollbar-color: var(--gray-1) rgba(0,0,0,0);   /* scroll thumb and track */
+        scrollbar-color: var(--gray-0) rgba(0,0,0,0);   /* scroll thumb and track */
         ::-webkit-scrollbar-thumb {
-            background: var(--gray-1); /* Old browsers */
+            background: var(--gray-0); /* Old browsers */
           border-radius: var(--border-radius);       /* roundness of the scroll thumb */
           border: 0px solid rgba(0, 0, 0, 0.0);  /* creates padding around scroll thumb */
         }
@@ -131,8 +132,9 @@ h3 {
     font-weight:700;
     letter-spacing: 0.3rem;
     font-variant-caps: small-caps;
-    background: webkit-linear-gradient(92.5deg,var(--blue) 6.25%,var(--light-blue) 106.66%);
-    background: linear-gradient(92.5deg,var(--blue) 6.25%,var(--light-blue) 106.66%);
+    background: #00F260;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #0575E6, #00F260);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0575E6, #00F260); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-clip: border-box;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

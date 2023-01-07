@@ -1,49 +1,52 @@
 :host {
     transition:var(--transition);
-    background:var(--gray-2);
+    // background:var(--gray-1);
     border-radius:var(--border-radius);
-    border:2px solid transparent;
+    border:1px solid transparent;
     &.blue {
-        background: var(--blue);
+        color: var(--blue);
+        border-color:  var(--blue);
     }
     &.orange {
-        background: var(--orange);
+        color: var(--orange);
+        border-color:  var(--orange);
         ::selection {
             background: var(--orange);
         }
     }
     &.green {
-        background: var(--green);
+        color: var(--green);
+        border-color:  var(--green);
         ::selection {
             background: var(--green);
         }
     }
     &.red {
-        background: var(--red);
+        color: var(--red);
+        border-color:  var(--red);
         ::selection {
             background: var(--red);
         }
     }
     &.pink {
-        background: var(--pink);
+        color: var(--pink);
+        border-color:  var(--pink);
         ::selection {
             background: var(--pink);
         }
     }
     &.purple {
-        background: var(--purple);
+        color: var(--purple);
+        border-color:  var(--purple);
         ::selection {
             background: var(--purple);
         }
     }
     &.yellow {
-        background: var(--yellow);
-        h6 {
-            color: var(--gray-0);
-        }
+        color: var(--yellow);
+        border-color:  var(--yellow);
         ::selection {
             background: var(--yellow);
-            color: var(--white);
         }
     }
     font-variant-caps: all-small-caps;
@@ -58,6 +61,8 @@
     h6 {
         grid-area:topic;
         font-weight:600;
+        font-size:1rem;
+        // color: var(--black);
     }
     &:hover {
         border-color:var(--white);

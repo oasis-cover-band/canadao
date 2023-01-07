@@ -31,7 +31,7 @@ export class GroupElementComponent implements OnInit {
       }
     } else {
       if (this.group.userIds.indexOf(this.loggedInAs.id) !== -1) {
-        this.group.userIds.splice(this.group.userIds.indexOf(this.loggedInAs.id));
+        this.group.userIds.splice(this.group.userIds.indexOf(this.loggedInAs.id), 1);
         this.alreadyMember = false;
       }
     }

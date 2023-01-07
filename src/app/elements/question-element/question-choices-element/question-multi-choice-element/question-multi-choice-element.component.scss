@@ -39,7 +39,7 @@
         position:relative;
         z-index:2;
         &:before {
-            background:var(--gray-1);
+            background:var(--gray-0);
             transition:var(--transition);
             content: '';
             position:absolute;
@@ -49,13 +49,13 @@
             bottom:0px;
             border-radius:1000px;
             padding:20px;
-            border:0px solid var(--gray-0);
+            border:0px solid var(--black);
             z-index:1;
         }
         &:hover {
             transform:scale(0.9);
             &:before {
-                background: var(--gray-2);
+                background: var(--gray-1);
                 border-width:10px;
                 // opacity:0.2;
             }

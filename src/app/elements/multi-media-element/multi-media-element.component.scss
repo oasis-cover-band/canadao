@@ -13,5 +13,13 @@
     app-video-element,
     app-image-element {
         grid-area:media;
+        
+    }
+    &.fade {
+        app-video-element,
+        app-image-element {
+            -webkit-mask-image:-webkit-linear-gradient(180deg, black 50%, rgba(0, 0, 0, 0) 95%);
+            mask-image: linear-gradient(180deg, black 50%, rgba(0, 0, 0, 0) 95%);
+        }
     }
 }

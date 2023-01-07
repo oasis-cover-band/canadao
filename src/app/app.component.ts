@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { asideRouterAnimations, mainRouterAnimations, navRouterAnimations, topRouterAnimations } from './animations';
+import { MenuService } from './services/menu.service';
 
 @Component({
   selector: 'app-root',
@@ -14,5 +16,11 @@ import { asideRouterAnimations, mainRouterAnimations, navRouterAnimations, topRo
   ]
 })
 export class AppComponent {
-  title = 'canadao';
+
+  opened: BehaviorSubject<boolean> = this.menuService.opened;
+  
+  constructor(
+    private menuService: MenuService
+  ) {
+  }
 }

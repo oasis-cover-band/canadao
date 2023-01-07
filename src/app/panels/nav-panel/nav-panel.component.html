@@ -2,37 +2,39 @@
 <h5 class="explore-header">
     Explore
 </h5>
-<ul class="explore-list"
-*ngIf="{
-    selection: (this.selection | async)!
-} as data$$">
+<ul class="explore-list">
     <li
     [routerLink]="[{ outlets: { main: ['home'] } }]"
-    routerLinkActive="active">
+    routerLinkActive="active"
+    (click)="this.closeMenu()">
         <app-svg-element icon="home" fill="var(--white)"></app-svg-element>
         <h6>Home</h6>
     </li>
     <li
     [routerLink]="[{ outlets: { main: ['dashboard'] } }]"
-    routerLinkActive="active">
+    routerLinkActive="active"
+    (click)="this.closeMenu()">
         <app-svg-element icon="chart-bar" fill="var(--white)"></app-svg-element>
         <h6>Dashboard</h6>
     </li>
     <li
     [routerLink]="[{ outlets: { main: ['questions'] } }]"
-    routerLinkActive="active">
+    routerLinkActive="active"
+    (click)="this.closeMenu()">
         <app-svg-element icon="help-circle" fill="var(--white)"></app-svg-element>
         <h6>Questions</h6>
     </li>
     <li
     [routerLink]="[{ outlets: { main: ['groups'] } }]"
-    routerLinkActive="active">
+    routerLinkActive="active"
+    (click)="this.closeMenu()">
         <app-svg-element icon="account-group" fill="var(--white)"></app-svg-element>
         <h6>Groups</h6>
     </li>
     <li
     [routerLink]="[{ outlets: { main: ['topics'] } }]"
-    routerLinkActive="active">
+    routerLinkActive="active"
+    (click)="this.closeMenu()">
         <app-svg-element icon="bookshelf" fill="var(--white)"></app-svg-element>
         <h6>Topics</h6>
     </li>

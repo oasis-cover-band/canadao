@@ -1,5 +1,5 @@
 :host {
-    background:var(--gray-0);
+    background:var(--black);
     border-radius: var(--border-radius);
     grid-area:content;
     display:grid;
@@ -49,10 +49,10 @@
             column-gap:10px;
             cursor: pointer;
             &.active {
-                background:var(--gray-1);
+                background:var(--gray-0);
             }
             &:hover {
-                background: var(--gray-2);
+                background: var(--gray-1);
             }
             h6 {
                 grid-area:list-item;

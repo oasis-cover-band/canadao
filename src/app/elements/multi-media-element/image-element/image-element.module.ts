@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { ImageElementComponent } from './image-element.component';
 
 
@@ -9,7 +9,8 @@ import { ImageElementComponent } from './image-element.component';
     ImageElementComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    NgOptimizedImage
   ],
   exports: [
     ImageElementComponent

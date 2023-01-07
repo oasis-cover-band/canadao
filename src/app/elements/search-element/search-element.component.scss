@@ -1,5 +1,5 @@
 :host {
-    background:var(--gray-1);
+    background:var(--gray-0);
     border-radius:var(--border-radius);
     transition:var(--transition);
     display:grid;
@@ -17,6 +17,6 @@
         grid-area:icon;
     }
     &:hover {
-        background:var(--gray-2);
+        background:var(--gray-1);
     }
 }

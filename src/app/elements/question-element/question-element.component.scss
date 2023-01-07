@@ -1,11 +1,11 @@
 :host {
     transition:var(--transition);
-    background:var(--gray-0);
+    background:var(--black);
     border-radius: var(--border-radius);
-    border:2px solid transparent;
-    max-width:calc(100% - 4px);
-    min-width:calc(100% - 4px);
-    width:calc(100% - 4px);
+    border:1px solid transparent;
+    max-width:calc(100% - 2px);
+    min-width:calc(100% - 2px);
+    width:calc(100% - 2px);
     max-height:fit-content;
     min-height:fit-content;
     height:fit-content;
@@ -15,22 +15,14 @@
     // grid-template-rows:
     // 20px max-content max-content max-content max-content 20px;
     grid-template-rows:
-    20px max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content; // last 20px buffer is handled within app-question-menu-element
+    20px max-content max-content max-content 40px max-content 40px max-content; // last 20px buffer is handled within app-question-menu-element
     grid-template-areas:
     '. . . . .'
     '. topics topics topics .'
     '. . . . .'
     '. . header . .'
     '. . . . .'
-    '. . . . .'
-    '. . . . .'
-    '. . . . .'
-    '. . . . .'
     '. choices choices choices .'
-    '. . . . .'
-    '. . . . .'
-    '. . . . .'
-    '. . . . .'
     '. . . . .'
     'menu menu menu menu menu';
     // '. . .'; // last 20px buffer is handled within app-question-menu-element

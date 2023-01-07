@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { MenuService } from 'src/app/services/menu.service';
 
 @Component({
   selector: 'app-top-panel',
@@ -8,4 +9,12 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 })
 export class TopPanelComponent {
 
+  constructor(
+    private menuService: MenuService
+  ) {
+  }
+
+  toggleMenu(): void {
+    this.menuService.toggleMenu();
+  }
 }

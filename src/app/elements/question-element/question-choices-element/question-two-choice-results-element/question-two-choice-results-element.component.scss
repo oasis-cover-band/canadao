@@ -1,14 +1,24 @@
 :host {
     display:grid;
     max-width:100%;
-    max-height:100px;
+    max-height:400px;
     min-width:100%;
-    min-height:100px;
+    min-height:400px;
     width:100%;
-    height:100px;
+    height:400px;
     grid-template-areas: 'chart';
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
+    @media (max-width:800px) {
+        max-height:200px;
+        min-height:200px;
+        height:200px;
+    }
+    @media (max-width:400px) {
+        max-height:100px;
+        min-height:100px;
+        height:100px;
+    }
     app-e-chart-element {
         grid-area:chart;
     }

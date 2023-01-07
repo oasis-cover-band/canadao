@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { MenuService } from 'src/app/services/menu.service';
 
 @Component({
   selector: 'app-nav-panel',
@@ -8,9 +8,12 @@ import { BehaviorSubject } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavPanelComponent {
-  selection: BehaviorSubject<number> = new BehaviorSubject<number>(2);
 
-  navigate(selection: number): void {
-    this.selection.next(selection);
+  constructor(
+    private menuService: MenuService
+  ) {}
+
+  closeMenu(): void {
+    this.menuService.closeMenu();
   }
 }

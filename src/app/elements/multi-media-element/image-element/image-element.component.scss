@@ -10,6 +10,7 @@
     'image';
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
+    position:relative;
     img {
         grid-area:image;
         height:100%;
@@ -17,5 +18,6 @@
         max-width:100%;
         object-fit: cover;
         overflow: hidden;
+        position:relative;
     }
 }

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
-import { ngIfHeightAnimations } from 'src/app/animations';
+import { ngIfHeightAnimations, ngIfScaleAnimations } from 'src/app/animations';
 import { Question } from 'src/app/interfaces/question';
 import { User } from 'src/app/interfaces/user';
 
@@ -8,7 +8,7 @@ import { User } from 'src/app/interfaces/user';
   templateUrl: './question-choices-element.component.html',
   styleUrls: ['./question-choices-element.component.scss'],
   animations: [
-    ngIfHeightAnimations
+    ngIfScaleAnimations
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
@@ -17,11 +17,6 @@ export class QuestionChoicesElementComponent {
   @Input() alreadyVoted!: boolean;
   @Input() loggedInAs!: User;
   @Output() voted: EventEmitter<number> = new EventEmitter<number>();
-
-  constructor(
-  ) {
-
-  }
 
   vote(choiceIndex: number) {
     this.voted.emit(choiceIndex);

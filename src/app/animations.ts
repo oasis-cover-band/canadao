@@ -1,4 +1,4 @@
-import { animate, style, transition, trigger } from "@angular/animations";
+import { animate, query, style, transition, trigger } from "@angular/animations";
 
 
 
@@ -24,6 +24,28 @@ trigger('ngIfHeightAnimations',
     ]
 );
 
+export const ngIfScaleAnimations =
+trigger('ngIfScaleAnimations',
+    [
+    transition(
+        ':leave', 
+        [
+            style({ transform: 'scale(1)'}),
+            animate('0.25s ease-in', 
+                style({ transform: 'scale(0)' }))
+        ],
+    ),
+    transition(
+        ':enter', 
+        [
+            style({ transform: 'scale(0)'}),
+            animate('0.25s ease-in', 
+                style({ transform: 'scale(1)' }))
+        ]
+    ),
+    ]
+);
+
 export const asideRouterAnimations =
 trigger('asideRouterAnimations',
     [
@@ -44,21 +66,33 @@ trigger('asideRouterAnimations',
 
 
 export const mainRouterAnimations =
-trigger('mainRouterAnimations',
-    [
-    transition(
-        ':leave', 
-        [
-            
-        ],
-    ),
-    transition(
-        ':enter', 
-        [
-
-        ]
-    ),
-    ]
+trigger('mainRouterAnimations', [
+    transition('* => *', [
+        query(
+            ':enter',
+            [
+                style({opacity: 0}),
+            ],
+            { optional: true }
+            ),
+        query(
+            ':leave',
+            [
+                style({opacity: 1}),
+                animate('0.25s ease-in', style({opacity: 0})),
+            ],
+            { optional: true }
+            ),
+        query(
+            ':enter',
+            [
+                style({opacity: 0}),
+                animate('0.25s 0.25s ease-in', style({opacity: 1})),
+            ],
+            { optional: true }
+            ),
+    ]),
+]
 );
 
 
@@ -68,13 +102,17 @@ trigger('centerPanelRouterAnimations',
     transition(
         ':leave', 
         [
-            
+            style({ opacity: 1 }),
+            animate('0.25s ease-in', 
+                style({  opacity: 0}))
         ],
     ),
     transition(
         ':enter', 
         [
-
+            style({ opacity: 0 }),
+            animate('0.25s ease-in', 
+                style({ opacity: 1 }))
         ]
     ),
     ]
