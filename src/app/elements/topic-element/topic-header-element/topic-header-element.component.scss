@@ -11,9 +11,11 @@
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     h4 {
+        
         grid-area:header;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        font-size:2rem;
     }
 }

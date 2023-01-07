@@ -10,7 +10,7 @@
     'image';
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    filter:brightness(0.5);
+    filter:brightness(0.75);
     app-multi-media-element {
         grid-area:image;
     }
