@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { QuestionChoiceResultsListElementComponent } from './question-choice-results-list-element.component';
+import { QuestionChoiceResultsListItemElementModule } from './question-choice-results-list-item-element/question-choice-results-list-item-element.module';
 
 
 
@@ -9,7 +10,8 @@ import { QuestionChoiceResultsListElementComponent } from './question-choice-res
     QuestionChoiceResultsListElementComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    QuestionChoiceResultsListItemElementModule
   ],
   exports: [
     QuestionChoiceResultsListElementComponent

@@ -7,6 +7,7 @@ import { QuestionTwoChoiceElementModule } from './question-two-choice-element/qu
 import { QuestionTwoChoiceResultsElementModule } from './question-two-choice-results-element/question-two-choice-results-element.module';
 import { QuestionMultiChoiceResultsElementModule } from './question-multi-choice-results-element/question-multi-choice-results-element.module';
 import { QuestionCustomChoiceResultsElementModule } from './question-custom-choice-results-element/question-custom-choice-results-element.module';
+import { QuestionChoiceResultsListElementModule } from './question-choice-results-list-element/question-choice-results-list-element.module';
 
 
 
@@ -21,7 +22,8 @@ import { QuestionCustomChoiceResultsElementModule } from './question-custom-choi
     QuestionTwoChoiceElementModule,
     QuestionCustomChoiceResultsElementModule,
     QuestionMultiChoiceResultsElementModule,
-    QuestionTwoChoiceResultsElementModule
+    QuestionTwoChoiceResultsElementModule,
+    QuestionChoiceResultsListElementModule
   ],
   exports: [
     QuestionChoicesElementComponent

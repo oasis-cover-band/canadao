@@ -26,11 +26,13 @@ export class GroupElementComponent implements OnInit {
   toggleGroupMembership(event: boolean) {
     if (event) {
       if (this.group.userIds.indexOf(this.loggedInAs.id) === -1) {
+        this.loggedInAs.groupIds.push(this.group.id);
         this.group.userIds.push(this.loggedInAs.id);
         this.alreadyMember = true;
       }
     } else {
       if (this.group.userIds.indexOf(this.loggedInAs.id) !== -1) {
+        this.loggedInAs.groupIds.splice(this.loggedInAs.groupIds.indexOf(this.group.id), 1);
         this.group.userIds.splice(this.group.userIds.indexOf(this.loggedInAs.id), 1);
         this.alreadyMember = false;
       }

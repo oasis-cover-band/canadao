@@ -1,6 +1,8 @@
+@import '../../scss/theme.scss';
+
 :host {
     transition:var(--transition);
-    background:var(--black);
+    background:var(--gray-0);
     border-radius: var(--border-radius);
     border:1px solid transparent;
     max-width:calc(100% - 2px);
@@ -28,14 +30,29 @@
         app-topic-header-element {
             grid-area:header;
         }
-        z-index:2;
+        z-index:3;
     }
     row-gap:20px;
     cursor: pointer;
-    &:hover {
-        border-color: var(--white);
-    }
     app-topic-image-element {
         grid-area:content;
+        z-index:1;
+    }
+    position:relative;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      z-index: 3;
+      margin: -1px; /* !importanté */
+      border-radius: inherit; /* !importanté */
+      @include gradient-0;
+      opacity:0;
+      transition:var(--transition);
+    }
+    &:hover {
+        &:before {
+            opacity:1;
+        }
     }
 }

@@ -1,9 +1,9 @@
+@import '../../scss/theme.scss';
+
 :host {
     transition: var(--transition);
     border-radius: var(--border-radius);
-    background: #00F260;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #0575E6, #00F260);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #0575E6, #00F260); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    @include gradient-0;
     max-width:100%;
     min-width:100%;
     width:100%;
@@ -29,8 +29,13 @@
         right:2px;
         left:2px;
         bottom:0px;
-        background:var(--black);
         opacity:0;
+        background:var(--gray-0);
+    }
+    &.black {
+        &:after {
+            background:var(--black);
+        }
     }
     button {
         grid-area:button;
@@ -44,9 +49,6 @@
         }
     }
     &.red {
-        background: #8A2387;  /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #F27121, #E94057, #8A2387);  /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #F27121, #E94057, #8A2387); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        
+        @include gradient-1;
     }
 }

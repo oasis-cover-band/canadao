@@ -1,6 +1,7 @@
+@import '../../scss/theme.scss';
+
 :host {
     transition:var(--transition);
-    background:var(--black);
     border-radius: var(--border-radius);
     border:1px solid transparent;
     max-width:calc(100% - 2px);
@@ -23,22 +24,55 @@
     '. . .';
     row-gap:20px;
     cursor: pointer;
-    &:hover {
-        border-color: var(--white);
-    }
     app-group-image-element {
         grid-area:image;
+        z-index:2;
     }
     app-group-header-element {
         grid-area:header;
+        z-index:2;
     }
     app-group-description-element {
         grid-area:description;
+        z-index:2;
     }
     app-group-actions-element {
         grid-area:actions;
+        z-index:2;
     }
     app-group-statistics-element {
         grid-area:statistics;
+        z-index:2;
+    }
+    position:relative;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      z-index: 1;
+      margin: 1px; /* !importanté */
+      border-radius: inherit; /* !importanté */
+      transition:var(--transition);
+      background:var(--gray-0);
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      z-index: 0;
+      margin: -1px; /* !importanté */
+      border-radius: inherit; /* !importanté */
+      @include gradient-0;
+      opacity:0;
+      transition:var(--transition);
+    }
+    &:hover {
+        &:before {
+            opacity:1;
+        }
+    }
+    @media (max-width:880px) {
+        grid-template-rows:
+        100px max-content 28px max-content max-content 20px;
     }
 }

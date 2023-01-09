@@ -9,7 +9,7 @@
   <router-outlet #nav="outlet" id="nav" name="nav"></router-outlet>
 </nav>
 
-<main class="content" [@mainRouterAnimations]="main.isActivated ? main.activatedRoute : ''">
+<main #mainElement class="content" [@mainRouterAnimations]="main.isActivated ? main.activatedRoute : ''">
   <router-outlet #main="outlet" id="main" name="main"></router-outlet>
 </main>
 

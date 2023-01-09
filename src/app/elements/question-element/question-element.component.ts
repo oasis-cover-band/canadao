@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
 import { BehaviorSubject } from 'rxjs';
 import { Question } from 'src/app/interfaces/question';
 import { User } from 'src/app/interfaces/user';
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 @Component({
   selector: 'app-question-element',
@@ -23,16 +24,23 @@ export class QuestionElementComponent implements OnInit {
     }
   }
 
-  vote(choiceIndex: number): void {
+  vote(optionIndex: number): void {
     if (this.alreadyVoted === false) {
+      ScrollTrigger.refresh();
+      const voteId = String(new Date().getTime() % 292992);
       this.alreadyVoted = true;
+      this.loggedInAs.voteIds.push(voteId);
       this.question.votedUsers.push(this.loggedInAs.id);
+      this.question.optionsCount[optionIndex]++;
       this.question.votes.push({
-        id: '',
+        id: voteId,
         userId: this.loggedInAs.id,
+        questionId: this.question.id,
         questionType: this.question.type,
-        voteOption: choiceIndex
+        voteOption: optionIndex,
+        timestamp: new Date().getTime()
       });
+      ScrollTrigger.refresh();
       // add vote logic here
     }
   }

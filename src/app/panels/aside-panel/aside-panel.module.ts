@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AsidePanelComponent } from './aside-panel.component';
+import { ButtonElementModule } from 'src/app/elements/button-element/button-element.module';
 
 
 
@@ -9,7 +10,8 @@ import { AsidePanelComponent } from './aside-panel.component';
     AsidePanelComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ButtonElementModule
   ],
   exports: [
     AsidePanelComponent

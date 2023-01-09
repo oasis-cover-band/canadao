@@ -9,11 +9,13 @@
     grid-template-columns: 1fr;
     grid-template-rows:1fr;
     grid-template-areas:
-    'choices';
+    'choices'
+    'list';
     justify-content: center;
     justify-items: center;
     align-content: center;
     align-items: center;
+    row-gap:40px;
     app-question-custom-choice-element,
     app-question-multi-choice-element,
     app-question-two-choice-element,
@@ -23,5 +25,8 @@
         grid-area:choices;
         align-self: center;
         justify-self: center;
+    }
+    app-question-choice-results-list-element {
+        grid-area: list;
     }
 }

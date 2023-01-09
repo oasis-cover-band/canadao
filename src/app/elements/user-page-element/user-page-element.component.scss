@@ -1,0 +1,27 @@
+@import '../../scss/theme.scss';
+
+:host {
+    transition:var(--transition);
+    border-radius: var(--border-radius);
+    border:1px solid transparent;
+    max-width:calc(100% - 2px);
+    min-width:calc(100% - 2px);
+    width:calc(100% - 2px);
+    max-height:fit-content;
+    min-height:fit-content;
+    height:fit-content;
+    overflow: hidden;
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content max-content;
+    grid-template-areas:
+    'info'
+    'delegation';
+    row-gap:20px;
+    app-user-page-info-element {
+        grid-area: info;
+    }
+    app-user-page-delegation-element {
+        grid-area: delegation;
+    }
+}

@@ -1,0 +1,14 @@
+<app-section-element class="delegates-to">
+    <h3>{{this.user.delegatedFromIds.length | kNumber}}</h3>
+    <h6>
+        {{this.user.name}}'s Direct Delegates
+    </h6>
+</app-section-element>
+
+<app-section-element class="delegated-to">
+    <h6>
+        {{this.user.name}} Delegates To
+    </h6>
+    <h3 *ngIf="this.delegatesToName !== '' && this.delegatesToName !== undefined">{{this.delegatesToName}}</h3>
+    <h3 *ngIf="this.delegatesToName === '' || this.delegatesToName === undefined">Noone</h3>
+</app-section-element>

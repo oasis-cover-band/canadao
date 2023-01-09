@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular/core';
 
 @Component({
   selector: 'app-e-chart-element',
@@ -9,6 +9,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 export class EChartElementComponent {
   @Input() options: any;
   onChartEvent(event: any, type: string) {
-    console.log('chart event:', type, event);
+    // console.log('chart event:', type, event);
   }
+  @Input() @HostBinding('class.overflow') overflow: boolean = false;
 }

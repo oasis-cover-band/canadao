@@ -1,8 +1,9 @@
 <ng-container *ngIf="{
     topics: (this.topics | async)!
 } as data$$">
-    <app-section-element class="grid">
+    <app-section-element class="grid" #gridElement>
         <app-topic-element *ngFor="let topic of data$$.topics; let index = index; trackBy: topicTrackBy"
+        #topicElement
         [topic]="topic"></app-topic-element>
     </app-section-element>
 </ng-container>

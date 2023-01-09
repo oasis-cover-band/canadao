@@ -1,1 +1,6 @@
-<p>user-element works!</p>
+<app-section-element>
+    <app-user-image-element [src]="this.user.image"></app-user-image-element>
+</app-section-element>
+<app-user-name-element [name]="this.user.name"></app-user-name-element>
+<app-user-description-element [description]="this.user.description"></app-user-description-element>
+<app-user-statistics-element [votePower]="this.user.votePower" [voteCount]="this.user.voteCount"></app-user-statistics-element>

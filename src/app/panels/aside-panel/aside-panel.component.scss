@@ -1,16 +1,13 @@
 :host {
-    background:var(--black);
-    border-radius: var(--border-radius);
     grid-area:content;
     display:grid;
     grid-template-areas:
-    '.'
-    'hot-votes-header'
-    'hot-votes-list'
+    'question'
+    'site-nav-list'
     '.';
     grid-template-columns: 1fr;
-    grid-template-rows: 20px max-content max-content 20px;
-    row-gap:10px;
+    grid-template-rows: max-content max-content 20px;
+    row-gap:20px;
     height:fit-content;
     max-height:fit-content;
     min-height:fit-content;
@@ -20,23 +17,25 @@
     //     grid-template-columns: max-content 1fr;
     //     grid-template-rows: 1fr;
     // }
+    app-button-element.question {
+        grid-area:question;
+    }
     app-logo-element {
         grid-area:logo;
     }
-    h5.hot-votes-header {
-        grid-area:hot-votes-header;
-        margin-left:20px;
-        margin-bottom:20px;
-    }
-    ul.hot-votes-list {
-        grid-area:hot-votes-list;
+    ul.site-nav-list {
+        grid-area:site-nav-list;
+        background:var(--gray-0);
+        border-radius: var(--border-radius);
     }
     ul {
         display:grid;
         grid-auto-rows: max-content;
         grid-auto-flow: row;
         column-gap:10px;
+        row-gap:10px;
         list-style-type: none;
+        overflow: hidden;
         li {
             transition: var(--transition);
             display:grid;
@@ -45,11 +44,11 @@
             '. icon list-item .'
             '. . . .';
             grid-template-columns: 10px max-content 1fr 10px;
-            grid-template-rows: 10px 1fr 10px;
+            grid-template-rows: 20px 1fr 20px;
             column-gap:10px;
             cursor: pointer;
             &.active {
-                background:var(--gray-0);
+                background:var(--black);
             }
             &:hover {
                 background: var(--gray-1);

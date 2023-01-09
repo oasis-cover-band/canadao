@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, HostBinding, Input, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-image-element',
@@ -8,4 +8,12 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 })
 export class ImageElementComponent {
   @Input() src!: string;
+  @ViewChild('imageElement') imageElement!: ElementRef;
+  @HostBinding('class.loading') loading: boolean = true;
+
+  loaded(event: any) {
+    if (this.imageElement.nativeElement.complete === true) {
+      this.loading = false;
+    }
+  }
 }

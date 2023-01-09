@@ -2,8 +2,9 @@
     questions: (this.questions | async)!,
     loggedInAs: (this.loggedInAs | async)!
 } as data$$">
-    <app-section-element class="grid">
+    <app-section-element class="grid" #gridElement>
         <app-question-element *ngFor="let question of data$$.questions; let index = index; trackBy: questionTrackBy"
+        #questionElement
         [loggedInAs]="data$$.loggedInAs"
         [question]="question"></app-question-element>
     </app-section-element>

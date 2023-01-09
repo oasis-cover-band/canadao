@@ -1,0 +1,92 @@
+@import '../../scss/theme.scss';
+
+:host {
+    transition:var(--transition);
+    border-radius: var(--border-radius);
+    border:1px solid transparent;
+    max-width:calc(100% - 2px);
+    min-width:calc(100% - 2px);
+    width:calc(100% - 2px);
+    max-height:fit-content;
+    min-height:fit-content;
+    height:fit-content;
+    overflow: hidden;
+    display:grid;
+    grid-template-columns: 20px 1fr 20px;
+    grid-template-rows:
+    max-content max-content 1fr max-content 20px;
+    // grid-template-areas:
+    // 'image image image'
+    // '. name .'
+    // '. description .'
+    // '. . .';
+    grid-template-areas:
+    'image image image'
+    '. name .'
+    '. description .'
+    '. statistics .'
+    '. . .';
+    row-gap:20px;
+    cursor: pointer;
+    app-section-element {
+        grid-area:image;
+        display:grid;
+        grid-template-columns: 20px 100px 20px;
+        grid-template-rows: 20px 100px;
+        grid-template-areas:
+        '. . .'
+        '. image .';
+        app-user-image-element {
+            grid-area: image;
+            border-radius:1000px;
+            min-height:100px;
+            min-width:100px;
+            overflow:hidden;
+        }
+        z-index: 2;
+        @include gradient-0;
+        background-size: 100% 50%;
+        background-repeat: no-repeat;
+    }
+    app-user-name-element {
+        grid-area:name;
+        z-index:2;
+        justify-self: center;
+        text-align: center;
+    }
+    app-user-description-element {
+        grid-area:description;
+        z-index:2;
+    }
+    app-user-statistics-element {
+        grid-area:statistics;
+        z-index:2;
+    }
+    position:relative;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      z-index: 1;
+      margin: 1px; /* !importanté */
+      border-radius: inherit; /* !importanté */
+      transition:var(--transition);
+      background:var(--gray-0);
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      z-index: 0;
+      margin: -1px; /* !importanté */
+      border-radius: inherit; /* !importanté */
+      @include gradient-0;
+      opacity:0;
+      transition:var(--transition);
+    }
+    &:hover {
+        &:before {
+            opacity:1;
+        }
+    }
+}

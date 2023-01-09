@@ -1,1 +1,1 @@
-<img [ngSrc]="this.src" loading="lazy" fill/>
+<img #imageElement [ngSrc]="this.src" loading="lazy" (load)="this.loaded($event)" fill/>

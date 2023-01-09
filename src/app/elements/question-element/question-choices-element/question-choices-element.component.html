@@ -31,3 +31,8 @@
     [@ngIfScaleAnimations]
     [question]="this.question"></app-question-two-choice-results-element>
 </ng-container>
+
+<ng-container *ngIf="this.alreadyVoted === true">
+    <app-question-choice-results-list-element [question]="this.question"
+    [@ngIfScaleAnimations]></app-question-choice-results-list-element>
+</ng-container>

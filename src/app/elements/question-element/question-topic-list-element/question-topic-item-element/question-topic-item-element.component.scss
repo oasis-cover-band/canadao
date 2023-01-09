@@ -1,54 +1,56 @@
+@import '../../../../scss/theme.scss';
+
 :host {
     transition:var(--transition);
     // background:var(--gray-1);
     border-radius:var(--border-radius);
-    border:1px solid transparent;
-    &.blue {
-        color: var(--blue);
-        border-color:  var(--blue);
-    }
-    &.orange {
-        color: var(--orange);
-        border-color:  var(--orange);
-        ::selection {
-            background: var(--orange);
-        }
-    }
-    &.green {
-        color: var(--green);
-        border-color:  var(--green);
-        ::selection {
-            background: var(--green);
-        }
-    }
-    &.red {
-        color: var(--red);
-        border-color:  var(--red);
-        ::selection {
-            background: var(--red);
-        }
-    }
-    &.pink {
-        color: var(--pink);
-        border-color:  var(--pink);
-        ::selection {
-            background: var(--pink);
-        }
-    }
-    &.purple {
-        color: var(--purple);
-        border-color:  var(--purple);
-        ::selection {
-            background: var(--purple);
-        }
-    }
-    &.yellow {
-        color: var(--yellow);
-        border-color:  var(--yellow);
-        ::selection {
-            background: var(--yellow);
-        }
-    }
+    // &.blue {
+    //     color: var(--blue);
+    //     border-color:  var(--blue);
+    // }
+    // &.orange {
+    //     color: var(--orange);
+    //     border-color:  var(--orange);
+    //     ::selection {
+    //         background: var(--orange);
+    //     }
+    // }
+    // &.green {
+    //     color: var(--green);
+    //     border-color:  var(--green);
+    //     ::selection {
+    //         background: var(--green);
+    //     }
+    // }
+    // &.red {
+    //     color: var(--red);
+    //     border-color:  var(--red);
+    //     ::selection {
+    //         background: var(--red);
+    //     }
+    // }
+    // &.pink {
+    //     color: var(--pink);
+    //     border-color:  var(--pink);
+    //     ::selection {
+    //         background: var(--pink);
+    //     }
+    // }
+    // &.purple {
+    //     color: var(--purple);
+    //     border-color:  var(--purple);
+    //     ::selection {
+    //         background: var(--purple);
+    //     }
+    // }
+    // &.yellow {
+    //     color: var(--yellow);
+    //     border-color:  var(--yellow);
+    //     ::selection {
+    //         background: var(--yellow);
+    //     }
+    // }
+    @include gradient-0;
     font-variant-caps: all-small-caps;
     cursor: pointer;
     display:grid;
@@ -60,11 +62,8 @@
     '. . .';
     h6 {
         grid-area:topic;
-        font-weight:600;
+        font-weight:900;
         font-size:1rem;
-        // color: var(--black);
-    }
-    &:hover {
-        border-color:var(--white);
+        // color: var(--gray-0);
     }
 }

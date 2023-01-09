@@ -1,1 +1,2 @@
-<p>question-choice-results-list-element works!</p>
+<app-question-choice-results-list-item-element *ngFor="let option of this.question.options; let index = index; trackBy: optionTrackBy"
+[optionName]="option" [optionValue]="this.question.optionsCount[index]" [totalVotes]="this.totalVotes"></app-question-choice-results-list-item-element>

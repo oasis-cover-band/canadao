@@ -38,4 +38,11 @@
         <app-svg-element icon="bookshelf" fill="var(--white)"></app-svg-element>
         <h6>Topics</h6>
     </li>
+    <li
+    [routerLink]="[{ outlets: { main: ['users'] } }]"
+    routerLinkActive="active"
+    (click)="this.closeMenu()">
+        <app-svg-element icon="account-single" fill="var(--white)"></app-svg-element>
+        <h6>Users</h6>
+    </li>
 </ul>
