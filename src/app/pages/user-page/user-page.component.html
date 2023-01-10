@@ -1,1 +1,5 @@
-<app-user-page-element [user]="this.user"></app-user-page-element>
+<ng-container *ngIf="{
+    loggedInAs: (this.loggedInAs | async)!
+} as data$$">
+    <app-user-page-element [user]="this.user" [loggedInAs]="data$$.loggedInAs"></app-user-page-element>
+</ng-container>

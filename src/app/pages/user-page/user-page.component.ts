@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 import { User } from 'src/app/interfaces/user';
 import { DataService } from 'src/app/services/data.service';
 
@@ -11,6 +12,8 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class UserPageComponent {
   user!: User;
+  loggedInAs: BehaviorSubject<User> = this.dataService.loggedInAs;
+
   constructor(private activatedRoute: ActivatedRoute,
     private dataService: DataService) {
     this.activatedRoute.params.subscribe((params) => {

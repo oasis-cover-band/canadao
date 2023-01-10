@@ -1,9 +1,11 @@
-import { ChangeDetectionStrategy, Component, ElementRef, Input, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, Input, QueryList, Renderer2, ViewChildren } from '@angular/core';
 import { User } from 'src/app/interfaces/user';
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import { Vote } from 'src/app/interfaces/vote';
 import { DataService } from 'src/app/services/data.service';
+import { ScrollService } from 'src/app/services/scroll.service';
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { Group } from 'src/app/interfaces/group';
 
 @Component({
   selector: 'app-user-page-element',
@@ -13,7 +15,9 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class UserPageElementComponent {
   @Input() user!: User;
+  @Input() loggedInAs!: User;
   votes!: Vote[];
+  groups!: Group[];
   questionNames!: string[];
 
   
@@ -31,20 +35,21 @@ export class UserPageElementComponent {
   
   constructor(
     private renderer: Renderer2,
-    private elRef: ElementRef,
-    private dataService: DataService
+    private dataService: DataService,
+    private scrollService: ScrollService
   ) {
 
   }
 
   ngOnInit(): void {
     this.getVotes();
+    this.getGroups();
   }
 
   registerScrollTrigger(element: Element): void {
     ScrollTrigger.create({
       trigger: element,
-      scroller: this.elRef.nativeElement,
+      scroller: this.scrollService.mainElement.getValue()!.nativeElement,
       scrub: 0.5,
       onEnter: () => { this.animateFrom(element); }, 
       onEnterBack: () => { this.animateFrom(element); },
@@ -73,5 +78,9 @@ export class UserPageElementComponent {
 
   getVotes(): void {
     [this.votes, this.questionNames] = this.dataService.getVotes(this.user.id);
+  }
+  getGroups(): void {
+    this.groups = this.dataService.getGroups(this.user.groupIds);
+    console.log(this.groups);
   }
 }

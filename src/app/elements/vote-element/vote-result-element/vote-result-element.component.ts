@@ -9,4 +9,5 @@ import { Vote } from 'src/app/interfaces/vote';
 })
 export class VoteResultElementComponent {
   @Input() vote!: Vote;
+  @Input() voteResultColor!: string;
 }

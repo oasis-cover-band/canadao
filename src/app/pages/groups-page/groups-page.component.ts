@@ -5,6 +5,7 @@ import { User } from 'src/app/interfaces/user';
 import { DataService } from 'src/app/services/data.service';
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { ScrollService } from 'src/app/services/scroll.service';
 
 @Component({
   selector: 'app-groups-page',
@@ -15,8 +16,6 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 export class GroupsPageComponent {
   groups: BehaviorSubject<Group[]> = this.dataService.groups;
   loggedInAs: BehaviorSubject<User> = this.dataService.loggedInAs;
-
-  @ViewChild('gridElement', {read: ElementRef}) grid!: ElementRef;
 
   
   @ViewChildren("groupElement", { read: ElementRef })
@@ -32,7 +31,8 @@ export class GroupsPageComponent {
   private _groupElements!: QueryList<ElementRef>;
   constructor(
     private dataService: DataService,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    private scrollService: ScrollService
   ) {}
 
   groupTrackBy(index: number, group: Group): string {
@@ -42,7 +42,7 @@ export class GroupsPageComponent {
   registerScrollTrigger(element: Element): void {
     ScrollTrigger.create({
       trigger: element,
-      scroller: this.grid.nativeElement,
+      scroller: this.scrollService.mainElement.getValue()!.nativeElement,
       scrub: 0.5,
       onEnter: () => { this.animateFrom(element); }, 
       onEnterBack: () => { this.animateFrom(element); },

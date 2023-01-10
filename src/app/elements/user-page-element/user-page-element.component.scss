@@ -13,15 +13,23 @@
     overflow: hidden;
     display:grid;
     grid-template-columns: 1fr;
-    grid-template-rows: max-content max-content;
+    grid-template-rows: max-content max-content max-content max-content;
     grid-template-areas:
     'info'
-    'delegation';
+    'delegation'
+    'voting'
+    'groups';
     row-gap:20px;
     app-user-page-info-element {
         grid-area: info;
     }
     app-user-page-delegation-element {
         grid-area: delegation;
+    }
+    app-user-page-voting-record-element {
+        grid-area: voting;
+    }
+    app-user-page-groups-element {
+        grid-area: groups;
     }
 }

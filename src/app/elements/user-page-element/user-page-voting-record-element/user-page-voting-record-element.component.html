@@ -1,6 +1,11 @@
-<h4>Voting Record</h4>
+<h4>Voting Record ({{this.votes.length | kNumber}})</h4>
 
-<app-section-element class="grid" #gridElement>
-    <app-vote-element *ngFor="let vote of this.votes; let index = index; trackBy: voteTrackBy"
-    [questionName]="this.questionNames[index]" [vote]="vote"></app-vote-element>
+<app-section-element class="grid">
+    <ng-container *ngFor="let vote of this.votes; let index = index; trackBy: voteTrackBy">
+        <app-vote-element *ngIf="(this.viewAll && index < this.currentPage + 1 * this.maxPerPage && index > this.currentPage * this.maxPerPage) || !this.viewAll && index < 3"
+        #voteElement
+        [voteResultColor]="this.voteResultColors[index]"
+        [questionName]="this.questionNames[index]" [vote]="vote"></app-vote-element>
+    </ng-container>
+    <h6 *ngIf="this.votes.length === 0">No Votes Cast</h6>
 </app-section-element>

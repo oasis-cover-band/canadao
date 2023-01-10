@@ -1,1 +1,3 @@
-<h4>{{(this.vote.voteOption | votingResult:this.vote.questionType)}}</h4>
+<h4 [ngStyle]="{
+    'color': this.voteResultColor
+}">{{(this.vote.voteOption | votingResult:this.vote.questionType)}}</h4>

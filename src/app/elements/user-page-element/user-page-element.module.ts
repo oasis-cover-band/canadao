@@ -4,6 +4,7 @@ import { UserPageElementComponent } from './user-page-element.component';
 import { UserPageDelegationElementModule } from './user-page-delegation-element/user-page-delegation-element.module';
 import { UserPageInfoElementModule } from './user-page-info-element/user-page-info-element.module';
 import { UserPageVotingRecordElementModule } from './user-page-voting-record-element/user-page-voting-record-element.module';
+import { UserPageGroupsElementModule } from './user-page-groups-element/user-page-groups-element.module';
 
 
 
@@ -15,7 +16,8 @@ import { UserPageVotingRecordElementModule } from './user-page-voting-record-ele
     CommonModule,
     UserPageInfoElementModule,
     UserPageDelegationElementModule,
-    UserPageVotingRecordElementModule
+    UserPageVotingRecordElementModule,
+    UserPageGroupsElementModule
   ],
   exports: [
     UserPageElementComponent

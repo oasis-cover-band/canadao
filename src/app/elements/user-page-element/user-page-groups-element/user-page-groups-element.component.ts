@@ -1,40 +1,43 @@
-import { ChangeDetectionStrategy, Component, ElementRef, QueryList, Renderer2, ViewChildren } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { Topic } from 'src/app/interfaces/topic';
-import { DataService } from 'src/app/services/data.service';
+import { ChangeDetectionStrategy, Component, ElementRef, Input, QueryList, Renderer2, ViewChildren } from '@angular/core';
+import { Group } from 'src/app/interfaces/group';
+import { User } from 'src/app/interfaces/user';
+import { ScrollService } from 'src/app/services/scroll.service';
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { ScrollService } from 'src/app/services/scroll.service';
 
 @Component({
-  selector: 'app-topics-page',
-  templateUrl: './topics-page.component.html',
-  styleUrls: ['./topics-page.component.scss'],
+  selector: 'app-user-page-groups-element',
+  templateUrl: './user-page-groups-element.component.html',
+  styleUrls: ['./user-page-groups-element.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TopicsPageComponent {
-  topics: BehaviorSubject<Topic[]> = this.dataService.topics;
+export class UserPageGroupsElementComponent {
 
+  @Input() loggedInAs!: User;
+  @Input() groups!: Group[];
   
-  @ViewChildren("topicElement", { read: ElementRef })
-  public set topicElements(value: QueryList<ElementRef>) {
+  @ViewChildren("groupElement", { read: ElementRef })
+  public set groupElements(value: QueryList<ElementRef>) {
     for(let index = 0; index < value.length; index++) {
       this.registerScrollTrigger(value.get(index)?.nativeElement);
       this.renderer.setStyle(value.get(index)?.nativeElement, 'opacity', 0);
     }
   }
-  public get topicElements(): QueryList<ElementRef> {
-    return this._topicElements;
+  public get groupElements(): QueryList<ElementRef> {
+    return this._groupElements;
   }
-  private _topicElements!: QueryList<ElementRef>;
+  private _groupElements!: QueryList<ElementRef>;
+  
+
   constructor(
-    private dataService: DataService,
     private renderer: Renderer2,
     private scrollService: ScrollService
-  ) {}
+  ) {
 
-  topicTrackBy(index: number, topic: Topic): string {
-    return topic.id;
+  }
+
+  groupTrackBy(index: number, group: Group): string {
+    return group.id;
   }
 
   registerScrollTrigger(element: Element): void {

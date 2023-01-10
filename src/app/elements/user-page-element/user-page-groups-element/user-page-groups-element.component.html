@@ -1,0 +1,7 @@
+<h4>Groups ({{this.groups.length | kNumber}})</h4>
+
+<app-section-element class="grid">
+    <app-group-element *ngFor="let group of this.groups; let index = index; trackBy: groupTrackBy"
+    #groupElement [group]="group" [loggedInAs]="this.loggedInAs"></app-group-element>
+    <h6 *ngIf="this.groups.length === 0">No Groups</h6>
+</app-section-element>

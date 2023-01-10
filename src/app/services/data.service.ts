@@ -955,7 +955,7 @@ export class DataService {
       image: '../../assets/temporary/canada0.jpg',
       delegatedFromIds: ['001', '002'],
       delegatedToId: '',
-      groupIds: [],
+      groupIds: ['1', '3'],
       voteIds: ['0', '1'],
       voteCount: 19292,
       votePower: 9001
@@ -1107,5 +1107,17 @@ export class DataService {
       }
     }
     return [votes, questionName];
+  }
+
+  getGroups(groupIds: string[]): Group[] {
+    let groups: Group[] = [];
+    let groupStorage = this.groups.getValue();
+    
+    return groupStorage.filter((group: Group) => {
+      console.log(group.id);
+      console.log(groupIds.indexOf(group.id));
+      return groupIds.indexOf(group.id) !== -1;
+    });
+
   }
 }

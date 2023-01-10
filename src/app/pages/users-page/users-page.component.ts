@@ -1,10 +1,11 @@
-import { ChangeDetectionStrategy, Component, ElementRef, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, QueryList, Renderer2, ViewChildren } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { User } from 'src/app/interfaces/user';
 import { DataService } from 'src/app/services/data.service';
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { ScrollService } from 'src/app/services/scroll.service';
 
 @Component({
   selector: 'app-users-page',
@@ -14,7 +15,6 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 })
 export class UsersPageComponent {
   users: BehaviorSubject<User[]> = this.dataService.users;
-  @ViewChild('gridElement', {read: ElementRef}) grid!: ElementRef;
 
   
   @ViewChildren("userElement", { read: ElementRef })
@@ -31,7 +31,8 @@ export class UsersPageComponent {
   constructor(
     private dataService: DataService,
     private router: Router,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    private scrollService: ScrollService
   ) {}
 
   userTrackBy(index: number, user: User): string {
@@ -45,7 +46,7 @@ export class UsersPageComponent {
   registerScrollTrigger(element: Element): void {
     ScrollTrigger.create({
       trigger: element,
-      scroller: this.grid.nativeElement,
+      scroller: this.scrollService.mainElement.getValue()!.nativeElement,
       scrub: 0.5,
       onEnter: () => { this.animateFrom(element); }, 
       onEnterBack: () => { this.animateFrom(element); },
