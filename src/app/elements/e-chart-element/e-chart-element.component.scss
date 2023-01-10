@@ -17,9 +17,9 @@
         width:100%!important;
     }
     &.overflow {
-        overflow-x:visible;
+        overflow-x:scroll;
         div.e-chart {
-            overflow-x:visible;
+            overflow-x:scroll;
         }
     }
 }

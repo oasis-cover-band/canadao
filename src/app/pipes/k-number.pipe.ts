@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'kNumber'
+  name: 'kNumber',
+  pure: true
 })
 export class KNumberPipe implements PipeTransform {
 

@@ -5,6 +5,7 @@ import { asideRouterAnimations, mainRouterAnimations, navRouterAnimations, topRo
 import { MenuService } from './services/menu.service';
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { ScrollService } from './services/scroll.service';
 
 @Component({
   selector: 'app-root',
@@ -21,11 +22,22 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 export class AppComponent {
 
   opened: BehaviorSubject<boolean> = this.menuService.opened;
-  @ViewChild('mainElement') mainElement!: ElementRef;
+  @ViewChild('mainElement')
+  public set mainElement(value: ElementRef) {
+    this.scrollService.mainElement.next(value);
+    this._mainElement = value;
+  }
+
+  public get mainElement(): ElementRef {
+    return this._mainElement;
+  }
+
+  private _mainElement!: ElementRef;
   
   constructor(
     private menuService: MenuService,
-    private router: Router
+    private router: Router,
+    private scrollService: ScrollService
   ) {
     gsap.registerPlugin(ScrollTrigger);
     this.router.events.subscribe((event: Event) => {

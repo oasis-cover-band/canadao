@@ -1,2 +1,3 @@
-<app-user-page-info-element [user]="this.user"></app-user-page-info-element>
-<app-user-page-delegation-element [user]="this.user"></app-user-page-delegation-element>
+<app-user-page-info-element [user]="this.user" #sectionElement></app-user-page-info-element>
+<app-user-page-delegation-element [user]="this.user" #sectionElement></app-user-page-delegation-element>
+<app-user-page-voting-record-element [questionNames]="this.questionNames" [votes]="this.votes" #sectionElement></app-user-page-voting-record-element>

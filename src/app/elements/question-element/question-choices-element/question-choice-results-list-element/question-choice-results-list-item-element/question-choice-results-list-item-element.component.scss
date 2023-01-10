@@ -10,7 +10,8 @@
     '. name count percentage .'
     '. . . . .';
     grid-template-rows: 20px 1fr 20px;
-    grid-template-columns: 20px 1fr 1fr 1fr 20px;
+    grid-template-columns: 20px 1fr 100px 75px 20px;
+    column-gap:10px;
     h6 {
         &:nth-of-type(1) {
             grid-area:name;
@@ -36,19 +37,22 @@
         position: absolute;
         top: 0; right: 0; bottom: 0; left: 0;
         z-index: 1;
-        margin: 1px; /* !importanté */
+        margin: 0px; /* !importanté */
         border-radius: inherit; /* !importanté */
         transition:var(--transition);
         background:var(--gray-0);
-      }
-      &:before {
-        content: '';
-        position: absolute;
-        top: 0; right: 0; bottom: 0; left: 0;
-        z-index: 0px;
-        margin: -1px; /* !importanté */
-        border-radius: inherit; /* !importanté */
-        @include gradient-0;
-        transition:var(--transition);
-      }
+    }
+    &:before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: 0px;
+    margin: -1px; /* !importanté */
+    border-radius: inherit; /* !importanté */
+    @include gradient-0;
+    transition:var(--transition);
+    }
+    @media (max-width:1500px) {
+        grid-template-columns: 20px 1fr 1fr 1fr 20px;
+    }
 }

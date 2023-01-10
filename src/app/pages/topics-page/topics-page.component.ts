@@ -41,8 +41,8 @@ export class TopicsPageComponent {
       trigger: element,
       scroller: this.grid.nativeElement,
       scrub: 0.5,
-      onEnter: () => { this.animateFrom(element, 'e'); }, 
-      onEnterBack: () => { this.animateFrom(element, 'eb'); },
+      onEnter: () => { this.animateFrom(element); }, 
+      onEnterBack: () => { this.animateFrom(element); },
       onLeave: () => { this.hide(element); },
       onLeaveBack: () => { this.hide(element); }
     });
@@ -57,7 +57,7 @@ export class TopicsPageComponent {
     });
   }
 
-  animateFrom(element: Element, type: string): void {
+  animateFrom(element: Element): void {
     gsap.fromTo(element, {autoAlpha: 0}, {
       duration: 0.25,
       autoAlpha: 1, 

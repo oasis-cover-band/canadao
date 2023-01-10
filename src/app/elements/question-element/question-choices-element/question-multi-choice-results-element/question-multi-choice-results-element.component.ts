@@ -22,7 +22,6 @@ export class QuestionMultiChoiceResultsElementComponent implements OnInit{
   options: any;
 
   ngOnInit(): void {
-    console.log(this.question);
     let vNayVotes: number = 0,
     nayVotes: number = 0,
     neutralVotes: number = 0,

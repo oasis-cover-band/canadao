@@ -18,7 +18,6 @@ export class QuestionChoiceResultsListElementComponent implements OnInit {
   calculateChoices(): void {
     for (let index = 0; index < this.question.optionsCount.length; index++) {
       this.totalVotes += this.question.optionsCount[index];
-      console.log(this.totalVotes);
     }
   }
 

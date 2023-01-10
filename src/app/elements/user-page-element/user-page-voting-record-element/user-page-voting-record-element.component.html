@@ -1,0 +1,6 @@
+<h4>Voting Record</h4>
+
+<app-section-element class="grid" #gridElement>
+    <app-vote-element *ngFor="let vote of this.votes; let index = index; trackBy: voteTrackBy"
+    [questionName]="this.questionNames[index]" [vote]="vote"></app-vote-element>
+</app-section-element>

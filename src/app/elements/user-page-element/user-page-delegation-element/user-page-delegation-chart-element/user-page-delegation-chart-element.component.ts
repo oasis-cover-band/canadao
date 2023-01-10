@@ -32,13 +32,11 @@ export class UserPageDelegationChartElementComponent implements OnInit {
 
     this.checkDelegates(this.delegations, this.user).then(after => {
       const userLinks = this.links.filter((link: any) => {
-        console.log(link.target);
         return link.target === this.user.name;
       });
       let userLinkValue = 0;
   
       for(let index = 0; index < userLinks.length; index++) {
-        console.log(index);
         userLinkValue += userLinks[index].value;
       }
   
@@ -79,7 +77,6 @@ export class UserPageDelegationChartElementComponent implements OnInit {
     for(let index = 0; index < user.delegatedFromIds.length; index++) {
       var temp = this.dataService.getUser(user.delegatedFromIds[index]);
       let childDelegates = await this.childDelegates(temp);
-      // console.log(user.name, childDelegates);
       delegations[user.name][temp.name];
       
       this.data.push({name: temp.name});

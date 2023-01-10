@@ -1,8 +1,6 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Question } from 'src/app/interfaces/question';
 import { User } from 'src/app/interfaces/user';
-import ScrollTrigger from "gsap/ScrollTrigger";
 
 @Component({
   selector: 'app-question-element',
@@ -13,6 +11,8 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 export class QuestionElementComponent implements OnInit {
   @Input() question!: Question;
   @Input() loggedInAs!: User;
+
+  @Output() refresh: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   alreadyVoted: boolean = false;
 
@@ -25,8 +25,8 @@ export class QuestionElementComponent implements OnInit {
   }
 
   vote(optionIndex: number): void {
+    this.refresh.emit(true);
     if (this.alreadyVoted === false) {
-      ScrollTrigger.refresh();
       const voteId = String(new Date().getTime() % 292992);
       this.alreadyVoted = true;
       this.loggedInAs.voteIds.push(voteId);
@@ -40,7 +40,6 @@ export class QuestionElementComponent implements OnInit {
         voteOption: optionIndex,
         timestamp: new Date().getTime()
       });
-      ScrollTrigger.refresh();
       // add vote logic here
     }
   }

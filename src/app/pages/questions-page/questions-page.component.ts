@@ -45,8 +45,12 @@ export class QuestionsPageComponent {
       trigger: element,
       scroller: this.grid.nativeElement,
       scrub: 0.5,
-      onEnter: () => { this.animateFrom(element, 'e'); }, 
-      onEnterBack: () => { this.animateFrom(element, 'eb'); },
+      invalidateOnRefresh: true,
+      refreshPriority: 1,
+      start: () => `top bottom`,
+      end: () => `bottom top`,
+      onEnter: () => { this.animateFrom(element); }, 
+      onEnterBack: () => { this.animateFrom(element,); },
       onLeave: () => { this.hide(element); },
       onLeaveBack: () => { this.hide(element); }
     });
@@ -61,12 +65,19 @@ export class QuestionsPageComponent {
     });
   }
 
-  animateFrom(element: Element, type: string): void {
+  animateFrom(element: Element): void {
     gsap.fromTo(element, {autoAlpha: 0}, {
       duration: 0.25,
       autoAlpha: 1, 
       ease: "circ", 
       overwrite: "auto"
     });
+  }
+
+  refresh(event: boolean): void {
+    ScrollTrigger.refresh();
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 10);
   }
 }

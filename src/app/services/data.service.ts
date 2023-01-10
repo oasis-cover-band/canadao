@@ -4,6 +4,7 @@ import { Group } from '../interfaces/group';
 import { Question } from '../interfaces/question';
 import { Topic } from '../interfaces/topic';
 import { User } from '../interfaces/user';
+import { Vote } from '../interfaces/vote';
 
 @Injectable({
   providedIn: 'root'
@@ -286,7 +287,7 @@ export class DataService {
     delegatedFromIds: [],
     delegatedToId: '',
     groupIds: [],
-    voteIds: [],
+    voteIds: ['0', '1'],
     voteCount: 19292,
     votePower: 9001
   });
@@ -955,7 +956,7 @@ export class DataService {
       delegatedFromIds: ['001', '002'],
       delegatedToId: '',
       groupIds: [],
-      voteIds: [],
+      voteIds: ['0', '1'],
       voteCount: 19292,
       votePower: 9001
     },
@@ -1088,5 +1089,23 @@ export class DataService {
 
   getUser(userId: string): User {
     return this.users.getValue().filter(user => {return user.id === userId})[0];
+  }
+
+  getVotes(userId: string): [Vote[], string[]] {
+    let votes: Vote[] = [];
+    let questionName: string[] = [];
+    let questions: Question[] = this.questions.getValue();
+    
+    for (let index = 0; index < questions.length; index++) {
+      let vote = questions[index].votes.filter((vote: Vote) => {
+        return vote.userId === userId;
+      })[0];
+      if (vote !== undefined) {
+        console.log('vote record found');
+        votes.push(vote);
+        questionName.push(questions[index].text);
+      }
+    }
+    return [votes, questionName];
   }
 }
