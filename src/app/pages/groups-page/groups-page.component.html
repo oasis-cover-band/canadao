@@ -7,6 +7,7 @@
         #groupElement
         [loggedInAs]="data$$.loggedInAs"
         [group]="group"
+        (toggling)="this.toggling($event)"
         (click)="goToGroup(group.id)"></app-group-element>
     </app-section-element>
 </ng-container>

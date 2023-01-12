@@ -1,4 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { User } from 'src/app/interfaces/user';
 
 @Component({
   selector: 'app-group-page-users-element',
@@ -7,5 +9,19 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GroupPageUsersElementComponent {
+  @Input() users!: User[];
 
+  constructor(
+    private router: Router
+  ) {
+    
+  }
+
+  userTrackBy(index: number, user: User): string {
+    return user.id;
+  }
+
+  goToProfile(userId: string) {
+    this.router.navigate([{outlets: {main: ['user', userId]}}]);
+  }
 }

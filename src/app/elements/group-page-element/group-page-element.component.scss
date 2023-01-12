@@ -16,12 +16,14 @@
     grid-template-rows: max-content max-content max-content max-content;
     grid-template-areas:
     'info'
-    'delegation'
-    'voting'
-    'groups';
+    'questions'
+    'users';
     row-gap:20px;
     app-group-page-info-element {
         grid-area: info;
+    }
+    app-group-page-questions-element {
+        grid-area: questions;
     }
     app-group-page-users-element {
         grid-area: users;

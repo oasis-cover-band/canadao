@@ -1,1 +1,7 @@
-<p>group-page-questions-element works!</p>
+<app-paginator-element [title]="'Questions (' + (this.questions.length | kNumber) + ')'" [thumbnail]="false" [maxPerPage]="4">
+    <ng-container *ngFor="let question of this.questions; let index = index; trackBy: questionTrackBy">
+        <app-question-element
+        #paginatedElement [question]="question" [loggedInAs]="this.loggedInAs"></app-question-element>
+    </ng-container>
+    <h6 *ngIf="this.questions.length === 0">No Questions</h6>
+</app-paginator-element>

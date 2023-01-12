@@ -24,6 +24,7 @@ import { GroupPageModule } from './pages/group-page/group-page.module';
 const routes: Routes = [
   {path: '', component: TopPanelComponent, outlet: 'top'},
   {path: '', component: NavPanelComponent, outlet: 'nav'},
+  {path: '', component: AsidePanelComponent, outlet: 'aside'},
   // { path: '',
   //   loadChildren: () => import('./panels/center-panel/center-panel.module').then(m => m.CenterPanelModule),
   //   outlet: 'main'
@@ -36,8 +37,7 @@ const routes: Routes = [
   {path: 'groups', component: GroupsPageComponent, outlet: 'main'},
   {path: 'group/:groupId', component: GroupPageComponent, outlet: 'main'},
   {path: 'users', component: UsersPageComponent, outlet: 'main'},
-  {path: 'user/:userId', component: UserPageComponent, outlet: 'main'},
-  {path: '', component: AsidePanelComponent, outlet: 'aside'}
+  {path: 'user/:userId', component: UserPageComponent, outlet: 'main'}
 ];
 
 @NgModule({

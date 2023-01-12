@@ -1,4 +1,14 @@
-
+<h4>{{this.title}}</h4>
+<h4 (click)="this.toggle()">{{this.toggleText}}</h4>
+<app-section-element class="paginator" *ngIf="this.viewAll">
+    <app-pagination-page-number-element *ngFor="let paginationPage of this.paginationPages; let index = index; trackBy: paginationPagesTrackBy"
+    [active]="this.currentPage === paginationPage"
+    (click)="goToPage(paginationPage)"
+    [page]="paginationPage"></app-pagination-page-number-element>
+</app-section-element>
+<app-pagination-list-element [thumbnail]="this.thumbnail && this.paginatedElements.length > 0 ? this.thumbnail : false" [maxPerPage]="this.maxPerPage" [currentPage]="this.currentPage" [viewAll]="this.viewAll" [paginatedElements]="this.paginatedElements">
+    <ng-content></ng-content>
+</app-pagination-list-element>
 <app-section-element class="paginator" *ngIf="this.viewAll">
     <app-pagination-page-number-element *ngFor="let paginationPage of this.paginationPages; let index = index; trackBy: paginationPagesTrackBy"
     [active]="this.currentPage === paginationPage"

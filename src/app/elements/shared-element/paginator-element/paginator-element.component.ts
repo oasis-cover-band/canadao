@@ -1,5 +1,7 @@
-import { ChangeDetectionStrategy, Component, ElementRef, HostBinding, Input, QueryList, Renderer2, ViewChildren } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ContentChildren, ElementRef, HostBinding, Input, QueryList, Renderer2 } from '@angular/core';
 import { ScrollService } from 'src/app/services/scroll.service';
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 @Component({
   selector: 'app-paginator-element',
@@ -8,10 +10,9 @@ import { ScrollService } from 'src/app/services/scroll.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PaginatorElementComponent {
-  @Input() page!: number;
-  @Input() @HostBinding('class.active') active!: boolean;
 
-  @ViewChildren('paginatedElement', {read: ElementRef}) public set paginatedElements(value: QueryList<ElementRef>) {
+  @ContentChildren('paginatedElement', {read: ElementRef}) public set paginatedElements(value: QueryList<ElementRef>) {
+    this._paginatedElements = value;
     for(let index = 0; index < value.length; index++) {
       this.registerScrollTrigger(value.get(index)?.nativeElement);
       this.renderer.setStyle(value.get(index)?.nativeElement, 'opacity', 0);
@@ -19,6 +20,7 @@ export class PaginatorElementComponent {
         this.paginationPages.push(this.paginationPages.length + 1);
       }
     }
+    this.scrollService.refresh();
   }
 
   public get paginatedElements(): QueryList<ElementRef> {
@@ -27,11 +29,13 @@ export class PaginatorElementComponent {
 
   private _paginatedElements!: QueryList<ElementRef>;
 
-  viewAll: boolean = false;
+  @Input() thumbnail!: boolean;
+  @Input() title!: string;
   paginationPages: number[] = [];
   currentPage = 1;
-  maxPerPage = 4;
+  @Input() maxPerPage = 4;
   toggleText = 'View All';
+  viewAll: boolean = false;
 
   constructor(
     private scrollService: ScrollService,
@@ -70,8 +74,8 @@ export class PaginatorElementComponent {
     this.scrollService.refresh();
   }
 
-  paginatorTrackBy(index: number, paginator: number): number {
-    return paginator;
+  paginationPagesTrackBy(index: number, paginationPage: number): number {
+    return paginationPage;
   }
 
   registerScrollTrigger(element: Element): void {

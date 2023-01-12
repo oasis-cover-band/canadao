@@ -17,6 +17,7 @@ import { Router } from '@angular/router';
 export class GroupsPageComponent {
   groups: BehaviorSubject<Group[]> = this.dataService.groups;
   loggedInAs: BehaviorSubject<User> = this.dataService.loggedInAs;
+  togglingMembership: boolean = false;
 
   
   @ViewChildren("groupElement", { read: ElementRef })
@@ -37,8 +38,17 @@ export class GroupsPageComponent {
     private router: Router
   ) {}
 
+  toggling(event: boolean): void {
+    this.togglingMembership = true;
+    setTimeout(() => {
+      this.togglingMembership = false;
+    }, 10);
+  }
+
   goToGroup(groupId: string) {
-    this.router.navigate([{outlets: {main: ['group', groupId]}}]);
+    if (!this.togglingMembership) {
+      this.router.navigate([{outlets: {main: ['group', groupId]}}]);
+    }
   }
 
   groupTrackBy(index: number, group: Group): string {

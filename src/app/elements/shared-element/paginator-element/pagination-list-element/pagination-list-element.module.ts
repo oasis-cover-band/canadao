@@ -10,6 +10,9 @@ import { PaginationListElementComponent } from './pagination-list-element.compon
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    PaginationListElementComponent
   ]
 })
 export class PaginationListElementModule { }

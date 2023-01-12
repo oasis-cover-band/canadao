@@ -81,6 +81,5 @@ export class UserPageElementComponent {
   }
   getGroups(): void {
     this.groups = this.dataService.getGroups(this.user.groupIds);
-    console.log(this.groups);
   }
 }

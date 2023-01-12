@@ -51,6 +51,13 @@
         pointer-events: none;
     }
 
+    // to make this element more performant
+    // it's better to scroll the child container than the main container
+    // but this is quite a bit easier to work with - a global scrolling container
+    // and though the performance is increased with scrolling child container instead
+    // this performance can be had in another way - aka doing virtual scroll which
+    // i did plan on implementing/i will implement on my own version of this framework for
+    // a social media app
     main.content {
         display:grid;
         grid-template-areas:

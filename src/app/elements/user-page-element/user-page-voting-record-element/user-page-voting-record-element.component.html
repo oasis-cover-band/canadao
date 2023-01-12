@@ -1,21 +1,8 @@
-<h4>Voting Record ({{this.votes.length | kNumber}})</h4>
-<h4 (click)="this.toggle()">{{this.toggleText}}</h4>
-
-<app-section-element class="grid">
+<app-paginator-element [title]="'Votes (' + (this.votes.length | kNumber) + ')'">
     <ng-container *ngFor="let vote of this.votes; let index = index; trackBy: voteTrackBy">
-        <app-vote-element *ngIf="(
-            this.viewAll && index < this.currentPage * this.maxPerPage && index >= (this.currentPage - 1) * this.maxPerPage)
-            || !this.viewAll && index < 3"
-        #voteElement
+        <app-vote-element
         [voteResultColor]="this.voteResultColors[index]"
-        [questionName]="this.questionNames[index]" [vote]="vote"></app-vote-element>
+        #paginatedElement [vote]="vote" [questionName]="this.questionNames[index]"></app-vote-element>
     </ng-container>
-    <h6 *ngIf="this.votes.length === 0">No Votes Cast</h6>
-</app-section-element>
-
-<app-section-element class="paginator" *ngIf="this.viewAll">
-    <app-paginator-element *ngFor="let paginator of this.paginators; let index = index; trackBy: paginatorTrackBy"
-    [active]="this.currentPage === paginator"
-    (click)="goToPage(paginator)"
-    [page]="paginator"></app-paginator-element>
-</app-section-element>
+    <h6 *ngIf="this.votes.length === 0">No Votes</h6>
+</app-paginator-element>

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Group } from 'src/app/interfaces/group';
 import { User } from 'src/app/interfaces/user';
@@ -13,6 +13,7 @@ import { DataService } from 'src/app/services/data.service';
 export class GroupElementComponent implements OnInit {
   @Input() group!: Group;
   @Input() loggedInAs!: User;
+  @Output() toggling: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   alreadyMember: boolean = false;
 
@@ -31,6 +32,7 @@ export class GroupElementComponent implements OnInit {
   }
 
   toggleGroupMembership(event: boolean) {
+    this.toggling.emit(event);
     if (event) {
       if (this.group.userIds.indexOf(this.loggedInAs.id) === -1) {
         this.loggedInAs.groupIds.push(this.group.id);

@@ -1,0 +1,28 @@
+@import '../../../scss/theme.scss';
+
+:host {
+    transition:var(--transition);
+    border-radius: var(--border-radius);
+    border:1px solid transparent;
+    max-width:100%;
+    min-width:100%;
+    width:100%;
+    max-height:fit-content;
+    min-height:fit-content;
+    height:fit-content;
+    overflow: hidden;
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content;
+    grid-template-areas:
+    'paginator';
+    position: relative;
+    app-paginator-element {
+        grid-area:paginator;
+    }
+    h6 {
+        justify-self: center;
+        text-align: center;
+        z-index:2;
+    }
+}

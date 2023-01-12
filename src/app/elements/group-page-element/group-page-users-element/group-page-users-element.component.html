@@ -1,1 +1,8 @@
-<p>group-page-users-element works!</p>
+<app-paginator-element [title]="'Members (' + (this.users.length | kNumber) + ')'" [thumbnail]="true" [maxPerPage]="4">
+    <ng-container *ngFor="let user of this.users; let index = index; trackBy: userTrackBy">
+        <app-user-element
+        #paginatedElement [user]="user"
+        (click)="goToProfile(user.id)"></app-user-element>
+    </ng-container>
+    <h6 *ngIf="this.users.length === 0">No Members</h6>
+</app-paginator-element>
