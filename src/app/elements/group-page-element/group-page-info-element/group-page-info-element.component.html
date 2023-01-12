@@ -1,0 +1,6 @@
+<app-section-element>
+    <app-group-image-element [src]="this.group.image" [fade]="false"></app-group-image-element>
+    <app-group-header-element [name]="this.group.name" [large]="true"></app-group-header-element>
+    <app-group-description-element [description]="this.group.description" [large]="true"></app-group-description-element>
+</app-section-element>
+<app-group-statistics-element [userCount]="this.group.userIds.length" [questionCount]="this.group.questionIds.length"></app-group-statistics-element>

@@ -16,4 +16,9 @@
         overflow: hidden;
         text-overflow: ellipsis;
     }
+    &.large {
+        h4 {
+            font-size:3rem;
+        }
+    }
 }

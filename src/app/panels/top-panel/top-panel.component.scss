@@ -28,5 +28,13 @@
         app-svg-element {
             display:grid;
         }
+        app-search-element {
+            display:none;
+        }
+        grid-template-areas:
+        '. . . . .'
+        '. icon logo buttons .'
+        '. . . . .';
+        grid-template-columns: 20px max-content max-content max-content 20px;
     }
 }

@@ -12,12 +12,13 @@
     height:fit-content;
     overflow: hidden;
     display:grid;
-    grid-template-columns: 20px 1fr 20px;
-    grid-template-rows: 20px max-content max-content;
+    grid-template-columns: 20px 1fr max-content 20px;
+    grid-template-rows: 20px max-content max-content max-content;
     grid-template-areas:
-    '. . . '
-    '. header .'
-    '. grid .';
+    '. . . .'
+    '. header toggle .'
+    '. grid grid .'
+    '. paginator paginator .';
     row-gap: 20px;
     position: relative;
     app-section-element.grid {
@@ -40,10 +41,32 @@
         row-gap:20px;
         z-index: 2;
     }
+    app-section-element.paginator {
+        grid-area:paginator;
+        max-width:100%;
+        min-width:100%;
+        width:100%;
+        max-height:100%;
+        min-height:100%;
+        height:100%;
+        display:grid;
+        grid-auto-flow: column;
+        grid-auto-columns: max-content;
+        column-gap:20px;
+        z-index: 2;
+    }
     h4 {
+        transition: var(--transition);
         grid-area: header;
         color: var(--white);
         z-index:2;
+        &:nth-of-type(2) {
+            grid-area:toggle;
+            cursor: pointer;
+            &:hover {
+                color:var(--green);
+            }
+        }
     }
     h6 {
         justify-self: center;

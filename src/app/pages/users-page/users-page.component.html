@@ -1,8 +1,7 @@
 <ng-container *ngIf="{
     users: (this.users | async)!
 } as data$$">
-    <app-section-element class="grid"
-   >
+    <app-section-element class="grid">
         <app-user-element *ngFor="let user of data$$.users; let index = index; trackBy: userTrackBy"
         #userElement
         [user]="user"

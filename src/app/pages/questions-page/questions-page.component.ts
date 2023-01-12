@@ -74,11 +74,4 @@ export class QuestionsPageComponent {
       overwrite: "auto"
     });
   }
-
-  refresh(event: boolean): void {
-    ScrollTrigger.refresh();
-    setTimeout(() => {
-      ScrollTrigger.refresh();
-    }, 10);
-  }
 }

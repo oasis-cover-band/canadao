@@ -5,7 +5,6 @@
     <app-section-element class="grid">
         <app-question-element *ngFor="let question of data$$.questions; let index = index; trackBy: questionTrackBy"
         #questionElement
-        (refresh)="this.refresh($event)"
         [loggedInAs]="data$$.loggedInAs"
         [question]="question"></app-question-element>
     </app-section-element>

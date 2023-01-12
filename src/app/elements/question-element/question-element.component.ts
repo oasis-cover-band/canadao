@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Question } from 'src/app/interfaces/question';
 import { User } from 'src/app/interfaces/user';
+import { ScrollService } from 'src/app/services/scroll.service';
 
 @Component({
   selector: 'app-question-element',
@@ -12,10 +13,14 @@ export class QuestionElementComponent implements OnInit {
   @Input() question!: Question;
   @Input() loggedInAs!: User;
 
-  @Output() refresh: EventEmitter<boolean> = new EventEmitter<boolean>();
-
   alreadyVoted: boolean = false;
 
+  constructor(
+    private scrollService: ScrollService
+  ) {
+
+  }
+  
   ngOnInit(): void {
     if (this.question.votedUsers.indexOf(this.loggedInAs.id) === -1) {
       this.alreadyVoted = false;
@@ -25,7 +30,7 @@ export class QuestionElementComponent implements OnInit {
   }
 
   vote(optionIndex: number): void {
-    this.refresh.emit(true);
+    this.scrollService.refresh();
     if (this.alreadyVoted === false) {
       const voteId = String(new Date().getTime() % 292992);
       this.alreadyVoted = true;

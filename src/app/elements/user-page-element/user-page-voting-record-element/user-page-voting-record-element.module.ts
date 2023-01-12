@@ -5,6 +5,7 @@ import { VoteElementModule } from '../../vote-element/vote-element.module';
 import { SectionElementModule } from '../../section-element/section-element.module';
 import { PipesModule } from 'src/app/pipes/pipes.module';
 import { VotingResultPipe } from 'src/app/pipes/voting-result.pipe';
+import { PaginatorElementModule } from '../../shared-element/paginator-element/paginator-element.module';
 
 
 
@@ -16,7 +17,8 @@ import { VotingResultPipe } from 'src/app/pipes/voting-result.pipe';
     CommonModule,
     VoteElementModule,
     SectionElementModule,
-    PipesModule
+    PipesModule,
+    PaginatorElementModule
   ],
   providers: [
     VotingResultPipe

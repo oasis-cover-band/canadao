@@ -6,14 +6,18 @@
     grid-area:content;
     display:grid;
     grid-template-areas:
-    '.'
-    'explore-header'
-    'explore-list'
-    '.';
-    grid-template-columns: 1fr;
-    grid-template-rows: 20px max-content max-content 20px;
+    '. . .'
+    '. search .'
+    'explore-header explore-header explore-header'
+    'explore-list explore-list explore-list'
+    '. . .';
+    grid-template-columns: 0px 1fr 0px;
+    grid-template-rows: 20px max-content max-content max-content 20px;
     column-gap:10px;
     row-gap:10px;
+    max-width:100%;
+    min-width:100%;
+    width:100%;
     height:fit-content;
     max-height:fit-content;
     min-height:fit-content;
@@ -21,7 +25,15 @@
     justify-items: stretch;
     z-index:2;
     pointer-events: all;
+    app-search-element {
+        grid-area:search;
+        display:none;
+    }
     @media (max-width:1200px) {
+        grid-template-columns: 20px 1fr 20px;
+        app-search-element {
+            display:grid;
+        }
         height:100%;
         max-height:100%;
         min-height:100%;

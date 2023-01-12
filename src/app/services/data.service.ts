@@ -1087,6 +1087,10 @@ export class DataService {
   constructor() { }
 
 
+  getGroup(groupId: string): Group {
+    return this.groups.getValue().filter(group => {return group.id === groupId})[0];
+  }
+
   getUser(userId: string): User {
     return this.users.getValue().filter(user => {return user.id === userId})[0];
   }

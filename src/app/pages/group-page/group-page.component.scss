@@ -1,0 +1,17 @@
+:host {
+    grid-area:content;
+    max-width:100%;
+    min-width:100%;
+    width:100%;
+    max-height:fit-content;
+    min-height:fit-content;
+    height:fit-content;
+    display:grid;
+    grid-template-areas:
+    'group';
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    app-group-page-element {
+        grid-area:group;
+    }
+}

@@ -55,6 +55,13 @@
         &:before {
             opacity:1;
         }
+        app-vote-header-element {
+            ::ng-deep {
+                h4 {
+                    white-space: normal;
+                }
+            }
+        }
     }
     @media (max-width:880px) {
         grid-template-columns: 20px 1fr 20px;

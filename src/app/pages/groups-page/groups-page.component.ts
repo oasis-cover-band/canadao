@@ -6,6 +6,7 @@ import { DataService } from 'src/app/services/data.service';
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { ScrollService } from 'src/app/services/scroll.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-groups-page',
@@ -32,8 +33,13 @@ export class GroupsPageComponent {
   constructor(
     private dataService: DataService,
     private renderer: Renderer2,
-    private scrollService: ScrollService
+    private scrollService: ScrollService,
+    private router: Router
   ) {}
+
+  goToGroup(groupId: string) {
+    this.router.navigate([{outlets: {main: ['group', groupId]}}]);
+  }
 
   groupTrackBy(index: number, group: Group): string {
     return group.id;

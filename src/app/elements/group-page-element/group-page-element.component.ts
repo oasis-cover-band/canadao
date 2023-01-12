@@ -1,4 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { Group } from 'src/app/interfaces/group';
+import { User } from 'src/app/interfaces/user';
 
 @Component({
   selector: 'app-group-page-element',
@@ -7,5 +9,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GroupPageElementComponent {
-
+  @Input() group!: Group;
+  @Input() loggedInAs!: User;
 }

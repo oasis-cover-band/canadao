@@ -1,0 +1,40 @@
+:host {
+    transition: var(--transition);
+    background: var(--gray-0);
+    border-radius: 1000px;
+    max-width:40px;
+    min-width:40px;
+    width:40px;
+    max-height:40px;
+    min-height:40px;
+    height:40px;
+    display:grid;
+    grid-template-areas:
+    '. . .'
+    '. paginator .'
+    '. . .';
+    grid-template-columns: 10px 1fr 10px;
+    grid-template-rows: 10px 1fr 10px;
+    cursor: pointer;
+    h6 {
+        transition: var(--transition);
+        grid-area:paginator;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        cursor: pointer;
+        justify-self: center;
+        align-self: center;
+        text-align: center;
+    }
+    &.active {
+        h6 {
+            color:var(--green);
+        }
+    }
+    &:hover {
+        h6 {
+            color:var(--blue);
+        }
+    }
+}

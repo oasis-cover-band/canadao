@@ -21,16 +21,21 @@ export class UserPageVotingRecordElementComponent {
   lightRed = this.style.getPropertyValue('--light-red');
   white = this.style.getPropertyValue('--white');
 
-  currentPage = 0;
-  maxPerPage = 3;
+  currentPage = 1;
+  maxPerPage = 4;
+  paginators: number[] = [];
 
   viewAll = false;
+  toggleText = 'View All';
 
   @Input()
   public set votes(value: Vote[]) {
     this._votes = value;
     for(let index = 0; index < value.length; index++) {
       this.voteResultColors.push(this.getVotingResultColor(value[index].voteOption, value[index].questionType));
+      if (index % this.maxPerPage === 0) {
+        this.paginators.push(this.paginators.length + 1);
+      }
     }
   }
 
@@ -66,22 +71,37 @@ export class UserPageVotingRecordElementComponent {
 
   }
 
-  nextPage() {
-    if (this.currentPage - 1 * this.maxPerPage < this.votes.length) {
+  toggle(): void {
+    this.viewAll = !this.viewAll;
+    if (this.viewAll) {
+      this.toggleText = 'Hide';
+    } else {
+      this.toggleText = 'View All';
+    }
+    this.scrollService.refresh();
+  }
+
+  nextPage(): void {
+    if (this.currentPage * this.maxPerPage < this.votes.length) {
       this.currentPage++;
     }
+    this.scrollService.refresh();
   }
 
-  previousPage() {
-    if (this.currentPage - 1 * this.maxPerPage > 0) {
+  previousPage(): void {
+    if ((this.currentPage - 1) * this.maxPerPage > 0) {
       this.currentPage--;
     }
+    this.scrollService.refresh();
   }
 
-  goToPage(pageNumber: number) {
-    if (pageNumber - 1 * this.maxPerPage < this.votes.length && pageNumber - 1 * this.maxPerPage > 0) {
-      this.currentPage = pageNumber;
-    }
+  goToPage(pageNumber: number): void {
+    this.currentPage = pageNumber;
+    this.scrollService.refresh();
+  }
+
+  paginatorTrackBy(index: number, paginator: number): number {
+    return paginator;
   }
 
   getVotingResultColor(voteOption: number, questionType: Vote['questionType']): string {

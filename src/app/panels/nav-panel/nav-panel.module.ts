@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NavPanelComponent } from './nav-panel.component';
 import { SvgElementModule } from 'src/app/elements/svg-element/svg-element.module';
 import { RouterModule } from '@angular/router';
+import { SearchElementModule } from 'src/app/elements/search-element/search-element.module';
 
 
 
@@ -13,7 +14,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     SvgElementModule,
-    RouterModule
+    RouterModule,
+    SearchElementModule
   ],
   exports: [
     NavPanelComponent

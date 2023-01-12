@@ -8,4 +8,5 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 })
 export class GroupImageElementComponent {
   @Input() src!: string;
+  @Input() fade: boolean = true;
 }

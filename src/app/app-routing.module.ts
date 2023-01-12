@@ -18,6 +18,8 @@ import { UsersPageComponent } from './pages/users-page/users-page.component';
 import { UsersPageModule } from './pages/users-page/users-page.module';
 import { UserPageComponent } from './pages/user-page/user-page.component';
 import { UserPageModule } from './pages/user-page/user-page.module';
+import { GroupPageComponent } from './pages/group-page/group-page.component';
+import { GroupPageModule } from './pages/group-page/group-page.module';
 
 const routes: Routes = [
   {path: '', component: TopPanelComponent, outlet: 'top'},
@@ -32,6 +34,7 @@ const routes: Routes = [
   {path: 'questions', component: QuestionsPageComponent, outlet: 'main'},
   {path: 'topics', component: TopicsPageComponent, outlet: 'main'},
   {path: 'groups', component: GroupsPageComponent, outlet: 'main'},
+  {path: 'group/:groupId', component: GroupPageComponent, outlet: 'main'},
   {path: 'users', component: UsersPageComponent, outlet: 'main'},
   {path: 'user/:userId', component: UserPageComponent, outlet: 'main'},
   {path: '', component: AsidePanelComponent, outlet: 'aside'}
@@ -46,9 +49,10 @@ const routes: Routes = [
     HomePageModule,
     QuestionsPageModule,
     TopicsPageModule,
+    GroupPageModule,
     GroupsPageModule,
     UsersPageModule,
-    UserPageModule
+    UserPageModule,
   ],
   exports: [RouterModule]
 })
