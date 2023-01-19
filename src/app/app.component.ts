@@ -4,7 +4,8 @@ import { BehaviorSubject } from 'rxjs';
 import { asideRouterAnimations, mainRouterAnimations, navRouterAnimations, topRouterAnimations } from './animations';
 import { MenuService } from './services/menu.service';
 import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import Flip from 'gsap/Flip';
 import { ScrollService } from './services/scroll.service';
 
 @Component({
@@ -39,7 +40,7 @@ export class AppComponent {
     private router: Router,
     private scrollService: ScrollService
   ) {
-    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger, Flip);
     this.router.events.subscribe((event: Event) => {
       // console.log(event);
       if (event instanceof NavigationStart) {
